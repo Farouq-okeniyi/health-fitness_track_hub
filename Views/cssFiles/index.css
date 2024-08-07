@@ -28,6 +28,9 @@ body {
     display: flex;
     flex-grow: 1;
 }
+.navlink:hover{
+    color: #0202EA;
+}
 
 .section-one {
     display: flex;
