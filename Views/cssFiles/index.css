@@ -16,9 +16,6 @@ body {
 .nav-bar {
     height: 100px;
     padding: 26px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .navlink {
@@ -67,6 +64,6 @@ body {
 }
 
 .section-one img {
-    align-items: start;
+    align-items: left;
     margin-top: -70px;
 }
