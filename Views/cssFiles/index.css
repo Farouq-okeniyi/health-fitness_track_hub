@@ -69,4 +69,38 @@ body {
     justify-content: center;
     text-decoration: none;
     cursor: pointer;
+
+}
+
+
+.section-two h1 {
+    color: #363636;
+    font-family: Roboto Slab;
+    font-weight: bold;
+    width: 334px;
+    height: 151px;
+    line-height: 47.48px;
+}
+
+.section-two h5 {
+    width: 555px;
+    height: 52px;
+    font-size: 20px;
+    line-height: 26.38px;
+    color: #363636;
+    font-family: Roboto slab;
+
+}
+
+#second-row {
+    padding-top: 50px;
+}
+
+.btn {
+    background-color: #4369B2;
+    padding: 16px 46px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: #F9F9F9;
+    margin-top: 120px;
 }
