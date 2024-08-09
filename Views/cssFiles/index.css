@@ -5,7 +5,7 @@
 
 body {
     background-image: linear-gradient(34.24deg, #B84646 48.1%, #2C2C65 89.63%);
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-size: 100%;
 }
 
@@ -28,15 +28,15 @@ body {
     text-align: right;
 }
 
-.navlink:hover{
+.navlink:hover {
     color: #0202EA;
 }
 
 .section-one {
     display: flex;
-   margin: 20px 0px;
-   padding: 40px 0px;
-   overflow: hidden;
+    margin: 20px 0px;
+    padding: 40px 0px;
+    overflow: hidden;
 }
 
 
@@ -46,9 +46,11 @@ body {
     line-height: 47.48px;
     color: #F9F9F9;
 }
-#sectionhead{
+
+#sectionhead {
     margin-top: 100px;
 }
+
 .section-one a {
     font-size: 14px;
     font-weight: 400;
@@ -68,4 +70,3 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-.section-one img{}
