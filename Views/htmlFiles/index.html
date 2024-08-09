@@ -8,45 +8,54 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Healtify</title>
     <link rel="stylesheet" href="../cssFiles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- nav bar -->
-
-    <nav class="container nav-bar sticky-top d-flex justify-content-between bg-body-tertiary bg-transparent navbar-light">
-        <div class="container d-flex justify-content-between">
-            <div class="col-7">
-                <img src="../resourcesFiles/healthifyLogo.png" alt="">
-            </div>
-            <div class="col-5 d-flex nav-item justify-content-between">
-                <a class="navlink text-right" href="">SIGN UP</a>
-                <a class="navlink" href="">LOGIN</a>
-                <a class="navlink" href="">FEATURES</a>
-                <a class="navlink" href="">BLOG</a>
-                <a class="navlink " href="">CONTACT</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- nav bar ending -->
-
-    <!-- MAIN CONTENT -->
-     <!-- first section of the landing page -->
-    <section class="section-one">
-        <div  class="container">
-            <div  class="row">
-                <div id="sectionhead" class="col-7 header">
-                    <h1>Instantly Chat/Video<br> Call Licenced Medical<br> Doctors in Nigeria!</h1>
-                    <a href="">Start Now For Free!</a>
+    <header class="header">
+        <nav
+            class="container nav-bar sticky-top d-flex justify-content-between bg-body-tertiary bg-transparent navbar-light">
+            <div class="container d-flex justify-content-between">
+                <div class="col-7">
+                    <img src="../resourcesFiles/healthifyLogo.png" alt="">
                 </div>
-                <div class="col-4 ">
-                    <img class="img" src="/Views/resourcesFiles/phonelogo.png">
+                <div class="col-5 d-flex nav-item justify-content-between">
+                    <a class="navlink text-right" href="">SIGN UP</a>
+                    <a class="navlink" href="">LOGIN</a>
+                    <a class="navlink" href="#features">FEATURES</a>
+                    <a class="navlink" href="">BLOG</a>
+                    <a class="navlink " href="">CONTACT</a>
                 </div>
-
             </div>
-        </div>
+        </nav>
 
-    </section>
+        <!-- nav bar ending -->
+
+        <!-- MAIN CONTENT -->
+        <!-- first section of the landing page -->
+        <section class="section-one">
+            <div class="container">
+                <div class="row">
+                    <div id="sectionhead" class="col-7 header">
+                        <h1>Instantly Chat/Video<br> Call Licenced Medical<br> Doctors in Nigeria!</h1>
+                        <a href="">Start Now For Free!</a>
+                    </div>
+                    <div class="col-4 ">
+                        <img class="img" src="/Views/resourcesFiles/phonelogo.png">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </header>
 
     <!-- second section of the landing page -->
 
@@ -56,16 +65,18 @@
                 <div class="row">
                     <div class="col-7">
                         <h1>Health Insurance that puts you in control</h1>
-                        <h5 class="display-5">Get access to premium healthcare facilities and services that fit your specific need, time, and budget.</h5>
+                        <h5 class="display-5">Get access to premium healthcare facilities and services that fit your
+                            specific need, time, and budget.</h5>
                     </div>
                     <div class="col-5">
-                        <img src="/Views/resourcesFiles/image 4.png"    alt="">
+                        <img src="/Views/resourcesFiles/image 4.png" alt="">
                     </div>
                 </div>
 
                 <div class="row" id="second-row">
                     <div class="col-8">
-                        <h5 class="display-5">Healthify leverages technology to redefine <strong>"quality healthcare"</strong> by making it simple, affordable, and wholistic.</h5>
+                        <h5 class="display-5">Healthify leverages technology to redefine <strong>"quality
+                                healthcare"</strong> by making it simple, affordable, and wholistic.</h5>
                         <button class="btn btn-primary">Learn more</button>
                     </div>
                     <div class="col-4">
@@ -79,25 +90,131 @@
         </div>
     </section>
 
-<!-- third section of the landing page -->
+    <!-- third section of the landing page -->
 
-    <section class="section-three">
-        <div class="container-fluid bg-white p-5">
-            <div class="container text-center">
-                <h1 class="heading-1">Personalized Tele Health</h1>
-                <h5 class="heading-5">Check out our features</h4>
-            </div>
-            <div class="container-fluid p-5">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="/Views/resourcesFiles/Group 3 (1).png" width="433px">
+
+    <section class="section-three bg-white" id="features">
+        <h1 class="text-center">Personalized Tele Health</h1>
+        <p class="text-center">Check out our features</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <img class="img-fluid" src="/Views/resourcesFiles/Group 3 (1).png">
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="first-column d-flex flex-column">
+                                <img src="/Views/resourcesFiles/Vector (1).png" class="img-fluid mx-auto">
+                                <h2 class="text-center">Instant Messaging</h2>
+                                <p class="text-center">Chat with licensed<br> medical practitioners!</p>
+                            </div>
+
+                            <div class="first-column d-flex flex-column">
+                                <img src="/Views/resourcesFiles/ion_fitness-outline.png" class="img-fluid mx-auto">
+                                <h2 class="text-center">Wellness & lifestyle</h2>
+                                <p class="text-center">Track your<br> fitness journey!</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="first-column d-flex flex-column">
+                                <img src="/Views/resourcesFiles/Vector.png" class="img-fluid mx-auto">
+                                <h2 class="text-center">Video Call</h2>
+                                <p class="text-center">Video call licensed<br> medical practitioners!</p>
+                            </div>
+
+                            <div class="first-column d-flex flex-column">
+                                <img src="/Views/resourcesFiles/Vector (2).png" class="img-fluid mx-auto">
+                                <h2 class="text-center">Secured Connections</h2>
+                                <p class="text-center">Secure connections<br> with your doctor!</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4"></div>
-                    <div class="col-4"></div>
                 </div>
             </div>
-        </div>
     </section>
+
+
+
+    <!-- FOURTH SECTION OF THE LANDING PAGE -->
+
+
+    <section class="section-four" style="background-color: black;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <h3>Subscribe for More</h3>
+                    <p>Select an option below for personalized health tips delivered daily</p>
+                    <form>
+                        <fieldset>
+                            <div class="gender-form">
+                                <input type="radio" id="gender1" name="contact" value="" />
+                                <label for="gender1">Male</label>
+
+                                <input type="radio" id="gender2" name="contact" value="" />
+                                <label for="gender2">Woman</label>
+
+                                <input type="radio" id="gender3" name="contact" value="" />
+                                <label for="gender3">Non-binary</label>
+
+                                <input type="radio" id="gender4" name="contact" value="" />
+                                <label for="gender4">Prefer not to say</label>
+                            </div>
+                        </fieldset>
+                        <div class="email-input-container">
+                            <label for="email-input"> </label><i class="bi bi-arrow-right-square-fill" id="icon"></i>
+                            <input type="email" id="email-input" placeholder="Email address:">
+
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="row text-start">
+                        <div class="col-4">
+                            <h3>Navigation</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Provider Network</a></li>
+                                <li><a href="#">Help Desk</a></li>
+                                <li><a href="#">Member Portal</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h3>Health Insurance</h3>
+                            <ul>
+                                <li><a href="#">Individual& Family</a></li>
+                                <li><a href="#">Seniors</a></li>
+                                <li><a href="#">Corporate plan</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h3>Others</h3>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+    </section>
+
+    <footer class="bg-black">
+        <p class="text-center">We <i class="bi bi-heart-fill"></i> New Friends!</p>
+        <p class="text-center" id="socials">Follow Us: <a href="#"> <i class="bi bi-facebook"></i></a> <a href="#"> <i
+                    class="bi bi-twitter"></i></a> <a href="#"> <i class="bi bi-linkedin"></i></a> <a href="#"> <i
+                    class="bi bi-instagram"></i></a></p>
+    </footer>
+
+
+
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
