@@ -15,8 +15,8 @@ body {
     max-height: 1048px;
     width: 100%;
     max-width: 639px;
-    margin-top: 65px;
-    margin-bottom: 65px;
+    /* margin-top: 65px;
+    margin-bottom: 65px; */
     border-radius: 12px;
 }
 
