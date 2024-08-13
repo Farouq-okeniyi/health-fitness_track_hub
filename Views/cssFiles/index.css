@@ -12,6 +12,7 @@ body{
 
 .bg-body-tertiary {
     background-color: transparent !important;
+    transition: background-color 2s ease-out;
     width: 100%;
     color:blue
 }
@@ -25,14 +26,28 @@ body{
     background-color:#fff;
     box-shadow: 5px -1px 12px -5px grey;
 }
+
 .scrolled {
-    background-color: rgba(241, 240, 240, 0.655) !important; /* New background color when scrolled */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;/* Smooth transition */
+    background-color: rgba(241, 240, 240, 0.655) !important;
+    transition: background-color 1s ease-in-out, color 1 ease-in-out;
 }
 .scrolled .navlink {
-    color: #000 !important; /* Ensure nav links also change color */
-    transition: color 0.3s ease-in-out; 
+    color: #000 !important; 
+    transition: color 1s ease-in-out; 
 }
+
+.unscrolled {
+    background-color: transparent !important; 
+    transition: background-color 1s ease-out
+}
+.unscrolled .bg-body-tertiary{
+    background-color: transparent !important; 
+    transition: background-color 1s ease-out
+}
+.unscrolled .navlink {
+    color: #000 !important; /* Ensure nav links also change color */
+    transition: color 1s ease-in-out; 
+} 
 .navlink {
     font-size: 16px;
     font-weight: 400;
