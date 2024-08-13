@@ -19,7 +19,8 @@ body{
 
 .nav-bar {
     height: 100px;
-    padding: 26px 0px;
+    /* padding: 26px 0px; */
+    
     width: 100%;
 }
 .nav-active {
@@ -34,6 +35,10 @@ body{
 .scrolled .navlink {
     color: #000 !important; 
     transition: color 1s ease-in-out; 
+}
+.scrolled .navlink:hover{
+    color: #0202EA !important;
+    transition: color 0.3s ease-in-out; 
 }
 
 .unscrolled {
@@ -59,6 +64,9 @@ body{
 }
 
 .navlink:hover {
+    color: #0202EA;
+}
+.navlink:active{
     color: #0202EA;
 }
 
