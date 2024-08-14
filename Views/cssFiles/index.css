@@ -4,7 +4,7 @@
     font-family: "Roboto" system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body{
+body {
     background-image: linear-gradient(34.24deg, #B84646 48.1%, #2C2C65 89.63%);
     background-attachment: fixed;
     background-size: 100%;
@@ -14,17 +14,18 @@ body{
     background-color: transparent !important;
     transition: background-color 2s ease-out;
     width: 100%;
-    color:blue
+    color: blue
 }
 
 .nav-bar {
     height: 100px;
     /* padding: 26px 0px; */
-    
+
     width: 100%;
 }
+
 .nav-active {
-    background-color:#fff;
+    background-color: #fff;
     box-shadow: 5px -1px 12px -5px grey;
 }
 
@@ -32,27 +33,33 @@ body{
     background-color: rgba(241, 240, 240, 0.655) !important;
     transition: background-color 1s ease-in-out, color 1 ease-in-out;
 }
+
 .scrolled .navlink {
-    color: #000 !important; 
-    transition: color 1s ease-in-out; 
+    color: #000 !important;
+    transition: color 1s ease-in-out;
 }
-.scrolled .navlink:hover{
+
+.scrolled .navlink:hover {
     color: #0202EA !important;
-    transition: color 0.3s ease-in-out; 
+    transition: color 0.3s ease-in-out;
 }
 
 .unscrolled {
-    background-color: transparent !important; 
+    background-color: transparent !important;
     transition: background-color 1s ease-out
 }
-.unscrolled .bg-body-tertiary{
-    background-color: transparent !important; 
+
+.unscrolled .bg-body-tertiary {
+    background-color: transparent !important;
     transition: background-color 1s ease-out
 }
+
 .unscrolled .navlink {
-    color: #000 !important; /* Ensure nav links also change color */
-    transition: color 1s ease-in-out; 
-} 
+    color: #000 !important;
+    /* Ensure nav links also change color */
+    transition: color 1s ease-in-out;
+}
+
 .navlink {
     font-size: 16px;
     font-weight: 400;
@@ -66,7 +73,8 @@ body{
 .navlink:hover {
     color: #0202EA;
 }
-.navlink:active{
+
+.navlink:active {
     color: #0202EA;
 }
 
@@ -96,7 +104,7 @@ body{
     color: #f9f9f9;
     width: 207px;
     height: 46px;
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     top: 70px;
@@ -109,6 +117,26 @@ body{
     cursor: pointer;
 
 }
+
+/*MEDIA QUERY FOR SECTION ONE*/
+
+@media(max-width:768px) {
+    .section-one #sectionhead {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5em;
+        align-items: center;
+    }
+
+}
+
+@media(max-width: 992px) {
+    #sectionhead {
+        margin-top: 50px;
+    }
+}
+
+/* END OF MEDIA QUERY FOR SECTION ONE*/
 
 
 .section-two h1 {
@@ -192,7 +220,11 @@ body{
 }
 
 
+/*MEDIA QUERY FOR SECTION THREE*/
 
+
+
+/* END OF MEDIA QUERY FOR SECTION THREE*/
 
 
 .section-four {
@@ -314,20 +346,20 @@ input[type="radio"]:checked::before {
     color: #f9f9f9;
 }
 
-.section-four .col-4 h3 {
+.section-four h3 {
     font-size: 24px;
     font-weight: 400;
     line-height: 31.65px;
     color: #d7d7d7;
 }
 
-.section-four .col-4 ul {
+.section-four ul {
     margin-top: 0;
     position: absolute;
     top: 0;
 }
 
-.section-four .col-4 ul li {
+.section-four ul li {
 
     list-style: none;
     text-align: left;
@@ -347,36 +379,117 @@ input[type="radio"]:checked::before {
     margin-top: 48px;
 }
 
-footer {
+/*MEDIA QUERY FOR SECTION FOUR*/
+
+@media (max-width:576px) {
+    .section-three .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-four h3 {
+        font-size: 18px;
+        line-height: 21.65px;
+    }
+
+    .section-four p {
+        font-size: 14px;
+        line-height: 16.38px;
+    }
+
+    .section-four .gender-form {
+        font-size: 18px;
+        line-height: 21.65px;
+    }
+
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+
+
+}
+
+/* END OF MEDIA QUERY FOR SECTION FOUR*/
+
+
+.footer {
     padding: 20px 50px;
 }
 
-footer p {
+.footer p {
     font-size: 30px;
     font-weight: 500;
     line-height: 39.57px;
     color: #f9f9f9;
 }
 
-footer #socials {
+.footer #socials {
     font-size: 28px;
     font-weight: 400;
     line-height: 36.93px;
     color: #F9F9F9;
 }
 
-footer .bi {
+.footer .bi {
     padding: 5px 15px;
 }
 
-footer #socials .bi:nth-of-type(1) {
+.footer #socials .bi:nth-of-type(1) {
     margin-left: 15px;
 }
 
-footer .bi-heart-fill {
+.footer .bi-heart-fill {
     color: #DA2121;
 }
 
-footer #socials .bi {
+.footer #socials .bi {
     color: #1877F2;
 }
+
+/*MEDIA QUERY FOR FOOTER*/
+
+@media (max-width:576px) {
+    .footer p {
+        font-size: 20px;
+        line-height: 29.57px;
+    }
+
+    .footer #socials {
+        font-size: 18px;
+        line-height: 26.93px;
+    }
+
+    .footer .bi {
+        padding: 5px 5px;
+    }
+
+    .footer #socials .bi:nth-of-type(1) {
+        margin-left: 0px;
+    }
+
+}
+
+
+@media (max-width:768px) {}
+
+
+@media (max-width:992px) {
+
+
+
+    .section-four .navigation {
+        padding-bottom: 150px;
+    }
+
+    .section-four .footer {
+        margin-top: 100px;
+
+    }
+}
+
+/* END OF MEDIA QUERY FOR FOOTER*/
