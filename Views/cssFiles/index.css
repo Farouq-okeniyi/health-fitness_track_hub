@@ -222,7 +222,7 @@ body {
 
 /*MEDIA QUERY FOR SECTION THREE*/
 
-
+@media(max-width: 992px) {}
 
 /* END OF MEDIA QUERY FOR SECTION THREE*/
 
@@ -355,7 +355,7 @@ input[type="radio"]:checked::before {
 
 .section-four ul {
     margin-top: 0;
-    position: absolute;
+    position: relative;
     top: 0;
 }
 
@@ -478,18 +478,6 @@ input[type="radio"]:checked::before {
 @media (max-width:768px) {}
 
 
-@media (max-width:992px) {
-
-
-
-    .section-four .navigation {
-        padding-bottom: 150px;
-    }
-
-    .section-four .footer {
-        margin-top: 100px;
-
-    }
-}
+@media (max-width:992px) {}
 
 /* END OF MEDIA QUERY FOR FOOTER*/
