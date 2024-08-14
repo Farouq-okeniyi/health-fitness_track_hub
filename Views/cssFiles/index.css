@@ -222,7 +222,26 @@ body {
 
 /*MEDIA QUERY FOR SECTION THREE*/
 
-@media(max-width: 992px) {}
+@media(max-width: 578px) {
+
+    .section-three .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .section-three .features .col-sm-12 {
+        padding-bottom: 40px;
+    }
+
+    .section-three .features .row {
+        padding-top: 40px;
+    }
+
+
+}
 
 /* END OF MEDIA QUERY FOR SECTION THREE*/
 
@@ -382,11 +401,14 @@ input[type="radio"]:checked::before {
 /*MEDIA QUERY FOR SECTION FOUR*/
 
 @media (max-width:576px) {
-    .section-three .row {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+    .section-four {
+        padding: 3em 1.5em 0 1.5em;
+
+    }
+
+    .section-four #row {
+        padding-top: 50px;
     }
 
     .section-four h3 {
@@ -400,7 +422,7 @@ input[type="radio"]:checked::before {
     }
 
     .section-four .gender-form {
-        font-size: 18px;
+        font-size: 15px;
         line-height: 21.65px;
     }
 
@@ -411,12 +433,41 @@ input[type="radio"]:checked::before {
         margin-left: 10px;
     }
 
+    .section-four .col-sm-12 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section-four .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    .section-four .col-4 ul li:nth-of-type(1) a {
+        margin-top: 10px;
+    }
+
+    .section-four .col-4 ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 0 !important;
+    }
+
 
 }
 
 /* END OF MEDIA QUERY FOR SECTION FOUR*/
 
 
+
+/*     FOOTER  FOOTER  FOOTER  FOOTER FOOTER FOOTER    */
 .footer {
     padding: 20px 50px;
 }
@@ -472,12 +523,10 @@ input[type="radio"]:checked::before {
         margin-left: 0px;
     }
 
+    .footer {
+        padding: 2px 5px;
+    }
+
 }
-
-
-@media (max-width:768px) {}
-
-
-@media (max-width:992px) {}
 
 /* END OF MEDIA QUERY FOR FOOTER*/
