@@ -259,45 +259,31 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 21.1px;
-    color: #f9f9f9;
     padding-top: 5%;
 
 }
 
-.email-input-container input {
-    width: 100%;
-    border: none;
-    padding: 0;
-    color: #F9F9F9;
-}
-
-.email-input-container .bi-arrow-right-square-fill {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-20%);
-    right: 10px;
-    font-size: 16px;
-    color: #F9F9F9;
-    z-index: 1;
-}
-
-.email-input-container input:focus+.bi-arrow-right-square-fill {
-    color: #4369B2;
-    /* or any other color you prefer */
-}
-
 #email-input {
-
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     max-width: 600px;
-    padding-right: 20px;
+    padding-right: 0px;
     border: none;
     border-bottom: 2px solid #f9f9f9;
     outline: none;
     background: none;
+    color: #f9f9f9;
     transform: translateY(-60%);
+    position: relative;
+    box-shadow: none;
+}
+
+.email-input-container .img-fluid {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-20%);
+    left: 94.9%;
+    font-size: 16px;
+    display: inline-block;
 }
 
 input[type="radio"] {
@@ -463,6 +449,12 @@ input[type="radio"]:checked::before {
 
 }
 
+@media(min-width:992px) {
+    .section-four .paragraph {
+        margin-bottom: 90px;
+    }
+}
+
 /* END OF MEDIA QUERY FOR SECTION FOUR*/
 
 
@@ -499,7 +491,12 @@ input[type="radio"]:checked::before {
 }
 
 .footer #socials .bi {
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
     color: #1877F2;
+    border: 2px solid;
+    border-radius: 50%;
 }
 
 /*MEDIA QUERY FOR FOOTER*/
@@ -528,5 +525,13 @@ input[type="radio"]:checked::before {
     }
 
 }
+
+@media(min-width:992px) {
+    .footer p {
+        padding-bottom: 10px;
+    }
+}
+
+
 
 /* END OF MEDIA QUERY FOR FOOTER*/
