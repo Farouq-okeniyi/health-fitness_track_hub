@@ -17,6 +17,6 @@ app.use(express.static(path.join(__dirname, 'Views')));
 //     res.sendFile(path.join(__dirname, 'Views/htmlFiles/login.html'));
 
 // });
-
+//setting our default route
 app.use('/Healtify',UserRoute);
 module.exports = app
