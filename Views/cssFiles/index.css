@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: "Roboto" system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Roboto slab", serif;
 }
 
 header {
@@ -121,7 +121,14 @@ header {
 /*MEDIA QUERY FOR SECTION ONE*/
 
 @media(max-width:576px) {
+
+    .section-one h1 {
+        font-size: 30px;
+    }
+
     #sectionhead {
+        display: flex;
+        align-items: center;
         text-align: center;
     }
 }
@@ -166,6 +173,15 @@ header {
 /*MEDIA QUERY FOR SECTION TWO*/
 
 @media(max-width:576px) {
+
+    .section-two-text h3 {
+        font-size: 30px;
+    }
+
+    .section-two-text p {
+        font-size: 20px;
+    }
+
     .section-two .section-two-text {
         padding-left: 0px;
     }
@@ -179,9 +195,22 @@ header {
 
     }
 
+    .section-two .section-two-text h3 {
+        font-size: 30px;
+    }
+
+    .section-two .section-two-text p {
+        font-size: 20px;
+    }
+
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .section-two {
+        padding-top: 50px;
+    }
+
+}
 
 /* END OF MEDIA QUERY FOR SECTION TWO*/
 
@@ -219,11 +248,6 @@ header {
 }
 
 
-
-.section-four {
-    padding-top: 100px;
-}
-
 .section-four h1 {
     font-size: 32px;
     font-weight: 600;
@@ -238,31 +262,30 @@ header {
     color: #4a4a4a;
 }
 
-.section-four .col-8 .row {
-    margin-top: 70px;
+.section-four .col-12 {
+    margin-top: 50px;
 }
 
-.section-four .col-8 h2 {
+.section-four .col-12 h2 {
     font-size: 30px;
     font-weight: 400;
     line-height: 39.57px;
     color: #363636;
 }
 
-.section-four .col-8 p {
+.section-four .col-12 p {
     font-size: 20px;
     font-weight: 400;
     line-height: 26.38px;
     color: #5e5e5e;
 }
 
-.section-four .col-8 img {
+.section-four .col-12 .col-6 img {
     width: 100%;
     max-width: 75px;
-    justify-content: center;
 }
 
-.section-four .col-8 .first-column {
+.section-four .col-12 .first-column {
     padding-bottom: 20px;
 }
 
@@ -278,8 +301,7 @@ header {
         align-items: center;
     }
 
-
-    .section-four .features .col-sm-12 {
+    .section-four #row .section-four .features .col-sm-12 {
         padding-bottom: 40px;
     }
 
@@ -339,6 +361,64 @@ header {
 
 /*END OF MEDIA QUERY FOR SECTION FIVE*/
 
+.section-six {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-left: 4%;
+    margin-right: 3%;
+}
+
+.section-six h3 {
+    padding: 10px;
+    color: #3C3C3C;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42.2px;
+}
+
+.section-six h4 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31.65px;
+    color: #4369B2;
+    padding: 16px 1px;
+
+}
+
+.section-six ul li {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.38px;
+    color: #3C3C3C;
+    padding: 20px 0;
+}
+
+.section-six ul li a {
+    text-decoration: none;
+}
+
+.section-six #btn {
+    width: 255px;
+    height: 49px;
+    padding: 14px 84px;
+    border-radius: 18px;
+    text-decoration: none;
+    background-color: #4E73B7;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.1px;
+    color: #f9f9f9;
+}
+
+/*MEDIA QUERY FOR SECTION-SIX */
+@media(max-width: 576px) {
+    .section-six {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* END OF MEDIA QUERY FOR SECTION-SIX */
 
 .section-nine {
     padding: 3em 1em 0 3em;
@@ -374,8 +454,8 @@ header {
 .email-input-container .img-fluid {
     position: absolute;
     top: 50%;
-    transform: translateY(-20%);
-    left: 94.9%;
+    transform: translateY(-40%);
+    left: 91.9%;
     font-size: 16px;
     display: inline-block;
 }
@@ -540,6 +620,10 @@ input[type="radio"]:checked::before {
         padding-left: 0 !important;
     }
 
+    .section-nine .col-4 ul li a {
+        font-size: 14px;
+    }
+
 
 }
 
@@ -591,7 +675,6 @@ input[type="radio"]:checked::before {
     color: #1877F2;
     border: 2px solid;
     border-radius: 50%;
-    aspect-ratio: 1;
 }
 
 /*MEDIA QUERY FOR FOOTER*/
@@ -617,6 +700,11 @@ input[type="radio"]:checked::before {
 
     .footer {
         padding: 2px 5px;
+    }
+
+    .footer #socials .bi {
+        width: 30px;
+        height: 30px;
     }
 
 }
