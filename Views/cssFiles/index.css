@@ -25,22 +25,33 @@ header {
 }
 
 .nav-active {
+<<<<<<< HEAD
     background-color: #fff;
     box-shadow: 5px -1px 12px -5px grey;
+=======
+    background-color:#fff;
+    box-shadow: 5px -1px 12px -5px grey; 
+>>>>>>> dad0ecf (i fixed the nav bar colour while on scroll)
 }
 
 .scrolled {
-    background-color: rgba(241, 240, 240, 0.655) !important;
-    transition: background-color 1s ease-in-out, color 1 ease-in-out;
+    background-color: #fff !important;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .scrolled .navlink {
+<<<<<<< HEAD
     color: #000 !important;
     transition: color 1s ease-in-out;
+=======
+    color: #000 !important; 
+    transition: color 0.5s ease-in-out; 
+>>>>>>> dad0ecf (i fixed the nav bar colour while on scroll)
 }
 
 .scrolled .navlink:hover {
     color: #0202EA !important;
+<<<<<<< HEAD
     transition: color 0.3s ease-in-out;
 }
 
@@ -52,14 +63,32 @@ header {
 .unscrolled .bg-body-tertiary {
     background-color: transparent !important;
     transition: background-color 1s ease-out
+=======
+    transition: color 0.5s ease-in-out; 
+}
+
+.unscrolled {
+    background-color: transparent !important; 
+    transition: background-color 0.5s ease-out
+}
+.unscrolled .bg-body-tertiary{
+    background-color: transparent !important; 
+    transition: background-color 0.5s ease-out
+>>>>>>> dad0ecf (i fixed the nav bar colour while on scroll)
 }
 
 .unscrolled .navlink {
+<<<<<<< HEAD
     color: #000 !important;
     /* Ensure nav links also change color */
     transition: color 1s ease-in-out;
 }
 
+=======
+    color: #000 !important; /* Ensure nav links also change color */
+    transition: color 0.5s ease-in-out; 
+} 
+>>>>>>> dad0ecf (i fixed the nav bar colour while on scroll)
 .navlink {
     font-size: 16px;
     font-weight: 400;
