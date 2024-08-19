@@ -267,7 +267,7 @@ header {
 }
 
 
-/*MEDIA QUERY FOR SECTION THREE*/
+/*MEDIA QUERY FOR SECTION FOUR*/
 
 @media(max-width: 578px) {
 
@@ -290,10 +290,57 @@ header {
 
 }
 
-/* END OF MEDIA QUERY FOR SECTION THREE*/
-
+/* END OF MEDIA QUERY FOR SECTION FOUR*/
 
 .section-five {
+    background-color: #587CC1;
+    padding-left: 5%;
+    padding-right: 3%;
+    padding-bottom: 4%;
+}
+
+.section-five h3 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42.2px;
+    color: #f9f9f9;
+}
+
+.section-five p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23.74px;
+    color: #F9F9F9;
+}
+
+.section-five-text {
+    padding-left: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/*MEDIA QUERY FOR SECTION FIVE*/
+
+@media(max-width: 578px) {
+
+    .section-five {
+        padding: 4%;
+    }
+
+    .section-five-text {
+        padding-top: 10%;
+        padding-left: 0;
+    }
+}
+
+/*END OF MEDIA QUERY FOR SECTION FIVE*/
+
+
+.section-nine {
     padding: 3em 1em 0 3em;
 
 }
@@ -364,14 +411,14 @@ input[type="radio"]:checked::before {
     /* optional, to change the checked state color */
 }
 
-.section-five .col-4 {
+.section-nine .col-4 {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.section-five h3 {
+.section-nine h3 {
     font-size: 24px;
     font-weight: 500;
     line-height: 31.65px;
@@ -380,44 +427,44 @@ input[type="radio"]:checked::before {
 }
 
 
-.section-five p {
+.section-nine p {
     font-size: 20px;
     font-weight: 400;
     line-height: 26.38px;
     color: #f9f9f9;
 }
 
-.section-five form {
+.section-nine form {
     margin-top: 8%;
 }
 
-.section-five .gender-form {
+.section-nine .gender-form {
     font-size: 24px;
     font-weight: 400;
     line-height: 31.65px;
     color: #f9f9f9;
 }
 
-.section-five h3 {
+.section-nine h3 {
     font-size: 24px;
     font-weight: 400;
     line-height: 31.65px;
     color: #d7d7d7;
 }
 
-.section-five ul {
+.section-nine ul {
     margin-top: 0;
     position: relative;
     top: 0;
 }
 
-.section-five ul li {
+.section-nine ul li {
 
     list-style: none;
     text-align: left;
 }
 
-.section-five .col-4 ul li a {
+.section-nine .col-4 ul li a {
     display: inline-block;
     padding: 15px 0;
     text-decoration: none;
@@ -427,34 +474,34 @@ input[type="radio"]:checked::before {
     color: #f9f9f9;
 }
 
-.section-five .col-4 ul li:nth-of-type(1) a {
+.section-nine .col-4 ul li:nth-of-type(1) a {
     margin-top: 48px;
 }
 
-/*MEDIA QUERY FOR SECTION FOUR*/
+/*MEDIA QUERY FOR SECTION NINE*/
 
 @media (max-width:576px) {
 
-    .section-five {
+    .section-nine {
         padding: 3em 1.5em 0 1.5em;
 
     }
 
-    .section-five #row {
+    .section-nine #row {
         padding-top: 50px;
     }
 
-    .section-five h3 {
+    .section-nine h3 {
         font-size: 18px;
         line-height: 21.65px;
     }
 
-    .section-five p {
+    .section-nine p {
         font-size: 14px;
         line-height: 16.38px;
     }
 
-    .section-five .gender-form {
+    .section-nine .gender-form {
         font-size: 15px;
         line-height: 21.65px;
     }
@@ -466,14 +513,14 @@ input[type="radio"]:checked::before {
         margin-left: 10px;
     }
 
-    .section-five .col-sm-12 {
+    .section-nine .col-sm-12 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
 
-    .section-five .navigation {
+    .section-nine .navigation {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -481,11 +528,11 @@ input[type="radio"]:checked::before {
         padding-top: 50px;
     }
 
-    .section-five .col-4 ul li:nth-of-type(1) a {
+    .section-nine .col-4 ul li:nth-of-type(1) a {
         margin-top: 10px;
     }
 
-    .section-five .col-4 ul li a {
+    .section-nine .col-4 ul li a {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -497,12 +544,12 @@ input[type="radio"]:checked::before {
 }
 
 @media(min-width:992px) {
-    .section-five .paragraph {
+    .section-nine .paragraph {
         margin-bottom: 90px;
     }
 }
 
-/* END OF MEDIA QUERY FOR SECTION FOUR*/
+/* END OF MEDIA QUERY FOR SECTION NINE*/
 
 
 
