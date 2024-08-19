@@ -109,4 +109,26 @@ body {
     margin-top: 10px;
 }
 
+/* MEDIA QUERY */
 
+@media screen and (max-width: 500px){
+    img {
+        width: 50%;
+    }
+    #welcome {
+        font-size: 18px;
+        
+    }
+    .section-two {
+        width: 70%;
+    }
+    .col-4 p{
+        font-size: 14px;
+    }
+    .col-4 a{
+        font-size: 14px;
+    }
+    .section-three p{
+        font-size: 13px;
+    }
+}
