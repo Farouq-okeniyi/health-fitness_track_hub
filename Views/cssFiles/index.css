@@ -894,3 +894,23 @@ input[type="radio"]:checked::before {
 
 
 /* END OF MEDIA QUERY FOR FOOTER*/
+
+
+
+.bi-arrow-up-circle-fill {
+    color: #F9F9F9;
+    font-size: 48px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    display: none;
+    /* hide by default */
+}
+
+.back-to-top.show {
+    display: block;
+}
