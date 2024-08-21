@@ -21,12 +21,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-if (window.scrollY < document.body.scrollHeight / 2) { // adjust the scroll position value as needed
-    backToTop.classList.add('up');
-} else {
-    backToTop.classList.remove('up');
-}
-
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });

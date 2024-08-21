@@ -8,7 +8,7 @@ function loginValidation() {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (email === "" && password === "") {
-        document.getElementById("error-message").style.display = "block";
+        document.getElementById("error-message").style.cssText = "display: block; padding: 5px 1px ";
         document.getElementById("error-message").innerHTML = "No field can be empty";
     } else if (email !== "" && password === "") {
         document.getElementById("error-message").style.display = "block";

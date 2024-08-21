@@ -277,6 +277,12 @@ header {
 
 }
 
+@media (min-width: 1200px) {
+    .top-image {
+        left: 14%;
+    }
+}
+
 
 .section-four h1 {
     font-size: 32px;
@@ -340,6 +346,16 @@ header {
     }
 
 
+}
+
+@media (min-width: 1200px) {
+    .section-four .col-12 .first-column {
+        padding-bottom: 50px;
+    }
+
+    .section-four .col-12 {
+        margin-top: 100px;
+    }
 }
 
 /* END OF MEDIA QUERY FOR SECTION FOUR*/

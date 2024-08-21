@@ -12,7 +12,8 @@ body {
 
 .row {
     padding: 40px 0;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .second-col {
@@ -99,5 +100,30 @@ button {
 
     .row {
         padding: 1% 0;
+    }
+
+    .first-image {
+        position: relative;
+        right: 1.4em;
+    }
+
+    p {
+        max-width: 100%;
+        height: 35px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .first-image {
+        position: relative;
+        right: 2.4em;
+    }
+}
+
+@media (max-width: 992px) {
+    .first-image {
+        position: relative;
+        right: 1.7em;
     }
 }
