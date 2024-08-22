@@ -10,69 +10,120 @@ body {
     background-color: #C5C3C3;
 }
 
-.container {
-    height: 100%;
-    max-height: 1048px;
-    width: 100%;
-    max-width: 639px;
-    /* margin-top: 65px;
-    margin-bottom: 65px; */
-    border-radius: 12px;
+.row {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
 }
 
-.container .img-fluid {
-    padding-top: 90px;
+.second-col {
+    background-color: #F9F9F9;
+    max-width: 504px;
+    width: 80%;
+    height: auto;
+    margin-left: 71px;
 }
 
-legend {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 42.2px;
+.second-col h4 {
     text-align: center;
     color: #A9A3A3;
-    padding: 32px 1px 0 1px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26.38px;
+}
+
+p {
+    width: 440px;
+    height: 35px;
+    padding: 5px 123px 2px 123px;
+    border-radius: 10px;
+    background-color: #6188D3;
+    margin: 0 auto;
+    color: #2C2CAB;
+    display: none;
 }
 
 .form-control {
-    max-width: 563px;
-    width: 100%;
-    /* max-height: 200px; */
-    height: 100px;
-    padding: 10px 39px;
-    border-radius: 12px;
-    margin: auto;
-    font-size: 24px;
+    border: 1px solid #06062F;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 31.65px;
-    background: #DFD5D5;
-    color: #4C4C76;
+    line-height: 15.83px;
+    color: #898585;
+    width: 445px;
+    height: 50px;
+
 }
 
 .form-control:focus {
     outline: none;
-    background-color: #DFD5D5;
-    color: #4C4C76;
-    box-shadow: 0 0 7px 1px #4c4c76;
+    box-shadow: 0 0 2px 1px #06062F;
 }
 
-.footer {
-    padding: 5px 0 70px 0;
-}
-
-.footer #button {
-    max-width: 563px;
-    width: 100%;
-    max-height: 98.81px;
-    height: 100%;
-    padding: 14px 245px;
+button {
+    width: 448px;
+    height: 50px;
+    padding: 10.8px 0px 14.86px 0px;
     border-radius: 10px;
     background-color: #4369B2;
     border: none;
 }
 
-.footer a {
-    display: flex;
-    justify-content: center;
+.footer {
+    margin-top: 5%;
     text-align: center;
+    margin-bottom: 3%;
+}
+
+.footer a {
     text-decoration: none;
+    padding: 3% 0;
+}
+
+
+@media (max-width: 576px) {
+
+    .second-col {
+        margin: 0 auto;
+    }
+
+
+    .form-control {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    button {
+        width: 100%;
+        height: 100%;
+    }
+
+    .row {
+        padding: 1% 0;
+    }
+
+    .first-image {
+        position: relative;
+        right: 1.4em;
+    }
+
+    p {
+        max-width: 100%;
+        height: 35px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .first-image {
+        position: relative;
+        right: 2.4em;
+    }
+}
+
+@media (max-width: 992px) {
+    .first-image {
+        position: relative;
+        right: 1.7em;
+    }
 }
