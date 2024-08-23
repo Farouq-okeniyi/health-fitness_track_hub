@@ -1,39 +1,33 @@
 const mongoose = require('mongoose')
-const validator = require('validator') 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+
+//schema for sighnup
+// Schema for signup
 const userSchema = new mongoose.Schema({
-    name:{
-        type: String,
-        required:[true, 'Please enter Your name'],
+    fullName:       {type: String,required: [true, 'Please enter your full name']},
 
-    },
-    email:{
-        type: String,
-        require:[true, 'please enter your email'],
-        validate:[validator.isEmail, 'Please input a valid email'],
-        unique:true,
-        lowercase:true
+    userName:       {type: String,required: [true, 'Please enter your username']},
 
-    },
-    photo: String,
+    phoneNumber:    {type: Number,required: [true, 'Please enter your phone number']},
 
-    password:{
-        type: String,
-        required:[true, 'Please enter a password'],
-        minlength:[7, 'password must be more than 7 characters']
-    },
-    confirmPassword:{
-        type: String,
-        required:[true, 'Please Confirm Your Password'],
+    gender:         {type: String, required:[true, 'Please Tell us your gender']},
 
-        validate:{
-            validator: function(val){
-                val == this.password
-            },
-            
-            message: 'password & confirm password doesnt match'
-        }
-    }
-})
-const User = mongoose.model(('User'), userSchema);
-module.exports = userSchema;
+    email:          {type: String,required: [true, 'Please enter your email'], unique:[true, 'Email already in use']},
+
+    password:       {type: String,required: [true, 'Please enter a password']},
+
+    confirmPassword:{type: String,required: [true, 'Please confirm your password']}
+});
+ userSchema.pre('save', async function(next){
+    if(!this.isModified('password')) return next();
+
+    this.password =await bcrypt.hash(this.password, 12)
+
+    this.confirmPassword = undefined;
+
+    next()
+ })
+
+const User = mongoose.model(('createdusers'), userSchema);
+
+module.exports = User;
