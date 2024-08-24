@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
 
     email:          {type: String,required: [true, 'Please enter your email'], unique:[true, 'Email already in use']},
 
-    password:       {type: String,required: [true, 'Please enter a password']},
+    password:       {type: String,required: [true, 'Please enter a password'], select:false},
 
     confirmPassword:{type: String,required: [true, 'Please confirm your password']}
 });
@@ -28,6 +28,9 @@ const userSchema = new mongoose.Schema({
     next()
  })
 
+ userSchema.methods.comparePasswordInDB = async function(pswd,pswddb) {
+   return await bcrypt.compare(pswd,pswddb)
+ }
 const User = mongoose.model(('createdusers'), userSchema);
 
 module.exports = User;

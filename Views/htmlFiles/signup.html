@@ -100,82 +100,12 @@
     </div>
 
     <div class="section-three">
-        <p>Already have an account? <a href="#login_Page">Login to your account</a></p>
+        <p>Already have an account? <a href="/login">Login to your account</a></p>
     </div>
     
     <scrip src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    
-    <!-- <script> 
-        // Attach 'input' event listeners to all form-control inputs to clear validation errors on user input
-        document.querySelectorAll('.form-control').forEach(input => {
-            input.addEventListener('input', function () {
-                this.classList.remove('is-invalid'); // Remove the invalid class
-                this.nextElementSibling.textContent = ''; // Clear the individual input's error message
-                document.querySelector('.error-message').textContent = ''; // Clear the general error message
-            });
-        });
-    
-        // Attach 'submit' event listener to the signup form
-        document.querySelector('#signup-form').addEventListener('submit', async function (e) {
-            e.preventDefault(); // Prevent the form from submitting the traditional way
-    
-            // Convert form data to a JSON object
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-    
-            try {
-                // Clear any previous error messages before submitting
-                document.querySelectorAll('.form-control').forEach(input => {
-                    input.classList.remove('is-invalid'); // Remove the invalid class
-                    const errorSpan = input.nextElementSibling;
-                    if (errorSpan && errorSpan.classList.contains('text-danger')) {
-                        errorSpan.textContent = ''; // Clear the individual input's error message
-                    }
-                });
-                document.querySelector('.error-message').textContent = ''; // Clear the general error message
-    
-                // Send the form data to the server
-                const response = await fetch('/Healtify/signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json' // Set the content type to JSON
-                    },
-                    body: JSON.stringify(data) // Convert data to JSON
-                });
-    
-                const result = await response.json(); // Parse JSON response
-    
-                if (response.ok) {
-                    // On successful response, show success message and optionally redirect
-                    alert('Signup successful!');
-                    // window.location.href = "/somePage"; // Optionally redirect
-                } else {
-                    // Display the error messages
-                    if (result.errors) {
-                        for (let key in result.errors) {
-                            const inputElement = document.querySelector(`[name="${key}"]`);
-                            if (inputElement) {
-                                inputElement.classList.add('is-invalid'); // Add the invalid class
-                                const errorSpan = inputElement.nextElementSibling;
-                                if (errorSpan && errorSpan.classList.contains('text-danger')) {
-                                    errorSpan.textContent = result.errors[key]; // Show the specific error message
-                                }
-                            }
-                        }
-                    } else {
-                        // If no specific errors, show a general error message
-                        document.querySelector('.error-message').textContent = result.message;
-                    }
-                }
-            } catch (error) {
-                console.error('Error:', error); // Log the error for debugging
-                document.querySelector('.error-message').textContent = 'An error occurred. Please try again later.'; // Show a general error message
-            }
-        });
-    </script>
-   -->
 
    <script> 
     document.querySelectorAll('.form-control').forEach(input => {
@@ -217,8 +147,12 @@
             const result = await response.json();
             if (response.ok) {
                 alert('Signup successful!');
-                // Optionally, redirect the user
-                // window.location.href = "/somePage";
+                 // Store the user data in localStorage
+                 console.log(result.user)
+                 localStorage.setItem('user', JSON.stringify(result.user));
+
+
+                window.location.href = '/Healtify/dashboard';
             } else if (response.status === 422) {
                 // Display validation errors
                 if (result.errors) {
