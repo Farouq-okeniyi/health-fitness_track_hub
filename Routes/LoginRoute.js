@@ -17,8 +17,8 @@ Router.route('/signup')
                         .post(userController.sighUserup)
 Router.route('/login')
                         .get(userController.getLoginpage)
-                        .post(userController.checkIn)
-
+                        .post(userController.logUserIn)
+Router.route('/dashboard').get(userController.getDashBoard)
 
 //exporting module
 module.exports = Router;
