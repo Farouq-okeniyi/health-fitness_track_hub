@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPLATE</title>
+    <link rel="icon" type="image.png" href="./../resourcesFiles/g848.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../cssFiles/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        :root {
+            --body-background: #FFFFFF;
+            --primary-text-color: #363636;
+            --secondary-color: #626262;
+            --secondary-background: #EBE9E9;
+            --hover-background: #4369B2;
+            --secondary-text-color: #f9f9f9;
+            --text-color-II: #3c3c3c;
+
+            --tran-02: all 0.2s ease;
+            --tran-03: all 0.3s ease;
+            --tran-04: all 0.4s ease;
+            --tran-05: all 0.5s ease;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto slab";
+            text-decoration: none;
+            list-style: none;
+
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+            background: var(--body-background);
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        header {
+            max-height: 100px;
+            position: sticky;
+            background: #FAFAFA;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            margin: 0 30px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .navbar {
+            display: none;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            flex-wrap: wrap;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            display: none;
+        }
+
+        #btn {
+            color: #000;
+            font-size: 30px;
+            height: auto;
+            text-align: center;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .menu-bar,
+        .search-bar,
+        .user-profile {
+            display: inline-block;
+        }
+
+        .notification-btn {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+
+        .bi-star-fill {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .nav-left .dropdown-toggle,
+        .nav-right .dropdown-toggle {
+            background: var(--secondary-background);
+            height: 48px;
+            padding: 16px 0px;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 23.74px;
+            color: var(--primary-text-color);
+            margin-right: 3em;
+            margin-left: 1em;
+        }
+
+        .form-control {
+            width: 230px;
+            height: auto;
+            padding: 12px 8px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21.1px;
+            color: #626262;
+            background-color: var(--secondary-background);
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 2px 1px #06062F;
+        }
+
+        .bi-bell-fill span {
+            background-color: #4369B2;
+        }
+
+        .notification-btn span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .notification-btn span .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 12px;
+            background-color: var(--hover-background);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav-right .user-profile {
+            width: 197px;
+            height: auto;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21.1px;
+            color: #626262;
+            background-color: var(--secondary-background);
+        }
+
+        .nav-right .dropdown-toggle::after {
+            position: relative;
+            left: 15%;
+            font-size: 1.6em;
+
+        }
+
+        .nav-left .dropdown-toggle::after {
+            font-size: 1.6em;
+
+        }
+
+        .nav-right .dropdown-toggle .bi {
+            margin-right: 15%;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 340px;
+            background: var(--body-background);
+            padding: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            transition: var(--tran-05);
+            margin-left: 25px;
+            display: flex;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            flex: 0 0 340px;
+        }
+
+        .sidebar ul {
+            margin-top: 20px;
+        }
+
+        .sidebar ul li {
+            width: 100%;
+            height: 48px;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+
+        .sidebar ul li a {
+            color: var(--primary-text-color);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .sidebar ul li a:focus {
+            color: var(--secondary-text-color);
+            background: var(--hover-background);
+            transition: var(--tran-02);
+        }
+
+        .sidebar ul li i {
+            height: 50px;
+            min-width: 50px;
+            border-radius: 12px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .sidebar .links-name {
+            opacity: 1;
+            transition: var(--tran-03);
+        }
+
+        .sidebar ul li .search {
+            display: none;
+        }
+
+        .sidebar ul li input {
+            display: none;
+        }
+
+
+        /* <!--SIDE BAR FOR SMALLER SCREEN SIZES--> */
+
+
+        /* MEDIA QUERY */
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: block;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+                margin: 0;
+            }
+
+            .nav-container .dropdown {
+                display: none;
+            }
+
+            .user-profile {
+                display: none;
+            }
+
+            .nav-left {
+                flex: 1;
+                justify-content: flex-start;
+                /* display: none; */
+            }
+
+            .toggle-btn {
+                display: inline-block;
+                font-size: 30px;
+            }
+
+            .notification-btn {
+                display: inline-block;
+                font-size: 20px;
+            }
+
+
+            .nav-left .logo {
+                flex-direction: 1;
+                text-align: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .nav-right {
+                justify-content: flex-end;
+            }
+
+            header {
+                padding: 0 5px 0 5px;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0px;
+                left: 0;
+                width: 0;
+                border: none;
+            }
+
+            .sidebar.active {
+                position: absolute;
+                width: 370px;
+                margin: 0;
+                z-index: 1;
+            }
+
+            .logo-content {
+                padding-top: 20px;
+            }
+
+            .sidebar .logo-content .logo img {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: var(--tran-05);
+            }
+
+            .sidebar.active .logo-content .logo img {
+                opacity: 1;
+                pointer-events: none;
+                height: 100%;
+            }
+
+            .sidebar .logo-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar ul li .search {
+                display: block;
+            }
+
+            .sidebar ul li input {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar #close-btn {
+                position: absolute;
+                color: #000;
+                top: 1px;
+                left: 95%;
+                font-size: 20px;
+                height: 50px;
+                width: 50px;
+                text-align: center;
+                line-height: 76px;
+                transform: translateX(-50%);
+                z-index: 1;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .sidebar.active #btn {
+                display: none;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .sidebar.active #close-btn {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+
+            .sidebar.active #btn {
+                left: 90%;
+            }
+
+            .sidebar.active .links-name {
+                opacity: 1;
+                pointer-events: auto;
+
+            }
+
+            .sidebar ul {
+                margin-top: 20px;
+            }
+
+            .sidebar ul li {
+                position: relative;
+                width: 50%;
+                margin: 0px 5px;
+            }
+
+            .sidebar.active ul li {
+                height: 50px;
+                width: 100%;
+                padding: 0;
+            }
+
+            .sidebar.active ul li:hover {
+                background-color: var(--secondary-background);
+            }
+
+
+            .sidebar ul li input {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 8px;
+                outline: none;
+                border: none;
+                background: var(--sidebar-color);
+                padding-left: 50px;
+                font-size: 16px;
+                color: var(--secondary-color);
+            }
+
+            .sidebar ul li .search {
+                position: absolute;
+                z-index: 99;
+                color: var(--secondary-color);
+                font-size: 22px;
+                transition: var(--tran-05);
+            }
+
+            .sidebar ul li .search:hover {
+                background: #FFFFFF;
+                color: #363636;
+            }
+
+            .sidebar ul li i {
+                height: 50px;
+                min-width: 50px;
+                border-radius: 12px;
+                text-align: center;
+                line-height: 50px;
+            }
+
+            .sidebar .links-name {
+                opacity: 0;
+                pointer-events: none;
+                transition: var(--tran-03);
+
+            }
+
+            .sidebar.active .links-name {
+                opacity: 1;
+                pointer-events: auto;
+
+            }
+
+
+
+        }
+
+
+        @media (min-width: 1200px) {
+            .sidebar {
+                display: flex;
+            }
+
+            #btn {
+                display: none;
+            }
+
+            .nav-container {
+                display: flex;
+            }
+
+            .nav-left .logo {
+                width: auto;
+            }
+
+            .toggle-btn {
+                display: none;
+            }
+        }
+    </style>
+
+
+    <header>
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="toggle-btn">
+                    <i class="bi bi-list" id="#btn"></i>
+                </div>
+                <div class="logo">
+                    <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
+                </div>
+
+                <div class="menu-bar d-none d-sm-none d-md-none d-lg-none d-xl-block ms-xl-3">
+                    <button class="dropdown-toggle d-flex align-items-center justify-content-center" id="toggle"
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-star-fill"></i>
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu" id="menu">
+                        <li class="dropdown-item">Call</li>
+                        <li class="dropdown-item">Contact Tech Team</li>
+                    </ul>
+                </div>
+                <div class="search-bar d-none d-sm-none d-md-none d-lg-none d-xl-block">
+                    <input type="search" id="search-input" placeholder="Search for a doc..." class="form-control">
+                </div>
+            </div>
+
+
+            <div class="nav-right">
+                <div class="notification-btn">
+                    <span>
+                        <i class="bi bi-bell-fill"><span class="badge mx-1" id="count">0</span></i>
+                    </span>
+                </div>
+                <div class="dropdown user-profile d-none d-sm-none d-md-none d-lg-none d-xl-block">
+                    <button class="dropdown-toggle d-flex align-items-center justify-content-center" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill"></i>
+                        User Profile
+                    </button>
+                    <ul class="dropdown-menu" id="menu">
+                        <li class="dropdown-item">Newsong</li>
+                        <li class="dropdown-item">Newsong</li>
+                        <li class="dropdown-item">Newsong</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar closed">
+        <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+            <div class="logo">
+                <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+            </div>
+
+            <i class="bi bi-x-lg" id="close-btn"></i>
+        </div>
+
+
+        <ul class="nav-list col-12">
+            <li class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+                <i class="bi bi-search search"></i>
+                <input type="search" placeholder="Search...">
+            </li>
+            <li class="mt-3">
+                <a href="#dashboard">
+                    <i class="bi bi-columns-gap ps-2"></i>
+                    <span class="links-name">Dashboard</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-search ps-2"></i>
+                    <span class="links-name">Explore</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-newspaper ps-2"></i>
+                    <span class="links-name">Profile</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-person ps-2"></i>
+                    <span class="links-name">Ward</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-clock-history ps-2"></i>
+                    <span class="links-name">Sessions</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-hospital ps-2"></i>
+                    <span class="links-name">Nearest hospitals</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-heart-pulse ps-2"></i>
+                    <span class="links-name">Wellness& Lifestyle</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-credit-card ps-2"></i>
+                    <span class="links-name">Finance</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-calendar ps-2"></i>
+                    <span class="links-name">Manage subscription</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-question-circle ps-2"></i>
+                    <span class="links-name">Help/platform feedback</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-gear ps-2"></i>
+                    <span class="links-name">Settings</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        let toggleBtn = document.querySelector(".toggle-btn");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector(".search");
+        const closeButton = document.querySelector("#close-btn");
+
+        toggleBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+
+        closeButton.onclick = function () {
+            sidebar.classList.remove("active");
+        }
+
+        searchBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
