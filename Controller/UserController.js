@@ -4,6 +4,12 @@ const bcrypt = require('bcrypt')
 const user = require('./../Model/authModel')
 const jwt = require('jsonwebtoken');
 const {userValidationSchema} = require('./../Model/validationModel')
+const {loginvalidation} = require('../Model/loginValidationModel')
+
+
+const signToken = id =>{
+    return jwt.sign({id}, process.env.SECRET_STR, {expiresIn: process.env.EXPIRES_IN})
+}
 //function to display hmepage
 
 const getHomepage = function(req,res){
@@ -34,33 +40,61 @@ const  getLoginpage = function(req,res){
     
    }
 }
-const checkIn =async function(req, res) {
+
+const getDashBoard = function(req, res) {
     try {
-        const Userpassword = req.body.password;
-
-        const hashUserpassword = await bcrypt.hash(Userpassword,12)
-
-        console.log(hashUserpassword);
-
-        res.status(200).json({
-            status: 'successful',
-
-            password: hashUserpassword // Returning the received password
-
-        });
+        res.sendFile(path.join(__dirname, '../Views/htmlFiles/dashboard.html'));
     } catch (error) {
-        res.status(400).json({
-
-            status: 'unsuccessful',
-
-            message: error.message
-
+        console.error('Error:', error);
+        res.status(500).json({
+            status: 'error',
+            message: 'An error occurred while loading the dashboard. Please try again later.'
         });
     }
 };
+const logUserIn = async function(req, res, next) {
+    try {
+        const { error, value } = loginvalidation.validate(req.body, { abortEarly: false });
+        if (error) {
+            console.log(error);
+            return res.status(400).json({
+                status: 'fail',
+                message: error.details.reduce((acc, curr) => {
+                    acc[curr.path[0]] = curr.message;
+                    return acc;
+                }, {})
+            });
+        }
 
+        const { email, password } = req.body;
+        const User = await user.findOne({ email }).select('+password');
+        const isMatch = await User.comparePasswordInDB(password, User.password);
+
+        if (!isMatch || !User) {
+            return res.status(422).json({
+                status: 'fail',
+                message: `Incorrect Login Information`
+            });
+        }
+
+        const token = signToken(User._id);
+
+        res.status(201).json({
+            status: 'success',
+            token,
+            
+            user: User
+            
+        });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({
+            status: 'error',
+            message: 'An error occurred. Please try again later.'
+        });
+    }
+};  
 const sighUserup =async function(req, res, next){
-        console.log(req.body)
         // Validate the request body against the Joi schema
         try{
             const { error, value } = userValidationSchema.validate(req.body, { abortEarly: false });
@@ -75,7 +109,6 @@ const sighUserup =async function(req, res, next){
                 }, {})
             });
         }
-
         const email = req.body.email;
         const CheckEMail = await user.findOne({email: email});
 
@@ -85,15 +118,14 @@ const sighUserup =async function(req, res, next){
                 message:'Email Already Exists'
             })
         }
-
-        console . log(email)
         // If validation passes, proceed to create the user
-        const newUser = await user.create(value);
+        const User = await user.create(value);
+
+        const token = signToken(User._id)
         res.status(201).json({
             status: 'success',
-            data: {
-                user: newUser
-            }
+            token,
+            user: User
         });
 
     } catch (err) {
@@ -104,31 +136,6 @@ const sighUserup =async function(req, res, next){
         });
 
     };}
-    // console.log(req.body)
-    // const newUser = await user.create(req.body);
-    // console.log(newUser);
-    // const token = jwt.sign({ id: newUser._id }, process.env.SECRET_STR, { expiresIn: process.env.EXPIRES_IN });
-
-    //     res.status(201).json({
-    //         status: 'Successful',
-    //         token: token,
-    //         user: newUser
-    //     });
-    
-    // const newUser = await user.create(req.body);
-
-        // const token = jwt.sign({id:newUser._id}, process.env.SECRET_STR, {expiresIn: process.env.EXPIRES_IN});
-
-        // res.status(201).json({
-        //     status: 'Successful',
-
-        //     token: token,
-
-        //     user: newUser
-        // });
-
-
-//exportinf my functions
 module.exports={
     getHomepage,
 
@@ -136,7 +143,9 @@ module.exports={
 
     getLoginpage,
 
-    checkIn,
+    getDashBoard,
+
+    logUserIn,
 
     sighUserup
 

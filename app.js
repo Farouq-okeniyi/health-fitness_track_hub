@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'Views')));
 //setting our default route
 app.use('/Healtify',UserRoute);
 
+
+
 app.use(globalerror)
 
 module.exports = app
