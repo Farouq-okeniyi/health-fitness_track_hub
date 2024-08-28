@@ -56,6 +56,8 @@
         header {
             max-height: 100px;
             position: sticky;
+            top: 0;
+            z-index: 100;
             background: #FAFAFA;
         }
 
@@ -65,15 +67,6 @@
             align-items: center;
             height: 100px;
             margin: 0 30px 0 40px;
-            flex-wrap: wrap;
-        }
-
-        .navbar {
-            display: none;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-            height: 100px;
             flex-wrap: wrap;
         }
 
@@ -191,8 +184,98 @@
             margin-right: 15%;
         }
 
+        /*MAIN CONTENT*/
+        .section-one {
+            margin-left: 360px;
+        }
+
+        .row-one h3 {
+            background: var(--secondary-background);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 26px;
+            color: var(--primary-text-color);
+            height: 48px;
+            padding-left: 0;
+        }
+
+        .row-two {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            width: 498px;
+            height: 198px;
+            border-radius: 16px;
+            background: var(--secondary-background);
+        }
+
+        .row-two h2 {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 39.57px;
+        }
+
+        .row-two .bi {
+            font-size: 24px;
+            color: var(--hover-background);
+        }
+
+        .row-three {
+            display: flex;
+            align-items: end;
+            height: 60px;
+            background: var(--secondary-background);
+            justify-content: space-between;
+        }
+
+        .row-three span {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .row-three h4 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 26.38px;
+            margin-bottom: 0;
+        }
+
+        .row-three .ico {
+            border-right: 5px solid var(--secondary-background);
+        }
+
+        .row-three .ico i {
+            background-color: var(--body-background);
+            border: 3px solid var(--secondary-background);
+            border-radius: 8px;
+            font-size: 12.63px;
+            width: 20px;
+            height: 20px;
+            color: #3c3c3c;
+            text-align: center;
+        }
+
+
+        .TOGGLE.close {
+            transform: translateY(-50%);
+            transition: var(--tran-05);
+        }
+
+        .TOGGLE.close {
+            transform: rotate(180deg);
+            color: #3c3c3c;
+            transition: var(--tran-05);
+        }
+
+
+
+
         .sidebar {
-            height: 100%;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            height: calc(100vh - 100px);
             width: 340px;
             background: var(--body-background);
             padding: 0;
@@ -204,6 +287,7 @@
             box-sizing: border-box;
             overflow-x: hidden;
             flex: 0 0 340px;
+            z-index: 99;
         }
 
         .sidebar ul {
@@ -219,6 +303,9 @@
             box-sizing: border-box;
         }
 
+        .sidebar ul li a:hover {
+            background-color: var(--secondary-background);
+        }
 
         .sidebar ul li a {
             color: var(--primary-text-color);
@@ -228,7 +315,7 @@
             border-radius: 8px;
         }
 
-        .sidebar ul li a:focus {
+        .sidebar ul li a.active {
             color: var(--secondary-text-color);
             background: var(--hover-background);
             transition: var(--tran-02);
@@ -254,6 +341,7 @@
         .sidebar ul li input {
             display: none;
         }
+
 
 
         /* <!--SIDE BAR FOR SMALLER SCREEN SIZES--> */
@@ -309,6 +397,13 @@
 
             header {
                 padding: 0 5px 0 5px;
+                position: sticky;
+                top: 0;
+                z-index: 99;
+            }
+
+            .section-one {
+                margin-left: 0px;
             }
 
             .sidebar {
@@ -317,13 +412,20 @@
                 left: 0;
                 width: 0;
                 border: none;
+                max-height: 100vh;
+                height: auto;
+                overflow-y: scroll;
+                transition: var(--tran-05);
             }
 
             .sidebar.active {
                 position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
                 width: 370px;
                 margin: 0;
-                z-index: 1;
+                z-index: 100;
             }
 
             .logo-content {
@@ -471,7 +573,9 @@
 
             }
 
-
+            .sub-sec.fill-gap {
+                margin-top: 3rem;
+            }
 
         }
 
@@ -495,6 +599,11 @@
 
             .toggle-btn {
                 display: none;
+            }
+
+            .section-two .col-xl-3 {
+                flex: 0 0 auto;
+                width: 24%;
             }
         }
     </style>
@@ -549,119 +658,111 @@
         </div>
     </header>
 
-    <div class="sidebar closed">
-        <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
-            <div class="logo">
-                <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+
+    <div class="container-fluid main-content">
+        <section class="section-one">
+            <div class="sidebar closed">
+                <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+                    <div class="logo">
+                        <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+                    </div>
+
+                    <i class="bi bi-x-lg" id="close-btn"></i>
+                </div>
+
+
+                <ul class="nav-list col-12 px-2">
+                    <li class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+                        <i class="bi bi-search search"></i>
+                        <input type="search" placeholder="Search...">
+                    </li>
+                    <li class="mt-3">
+                        <a href="./dashboard.html" id="dashboard-link">
+                            <i class="bi bi-columns-gap ps-2"></i>
+                            <span class="links-name">Dashboard</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="explore-link">
+                            <i class="bi bi-search ps-2"></i>
+                            <span class="links-name">Explore</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./profile.html" id="profile-link">
+                            <i class="bi bi-newspaper ps-2"></i>
+                            <span class="links-name">Profile</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="ward-link">
+                            <i class="bi bi-person ps-2"></i>
+                            <span class="links-name">Ward</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="sessions-link">
+                            <i class="bi bi-clock-history ps-2"></i>
+                            <span class="links-name">Sessions</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="hospitals-link">
+                            <i class="bi bi-hospital ps-2"></i>
+                            <span class="links-name">Nearest hospitals</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="wellness-link">
+                            <i class="bi bi-heart-pulse ps-2"></i>
+                            <span class="links-name">Wellness& Lifestyle</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="finance-link">
+                            <i class="bi bi-credit-card ps-2"></i>
+                            <span class="links-name">Finance</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="manageSubscription-link">
+                            <i class="bi bi-calendar ps-2"></i>
+                            <span class="links-name">Manage subscription</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="help-link">
+                            <i class="bi bi-question-circle ps-2"></i>
+                            <span class="links-name">Help/platform feedback</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="settings-link">
+                            <i class="bi bi-gear ps-2"></i>
+                            <span class="links-name">Settings</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <i class="bi bi-x-lg" id="close-btn"></i>
-        </div>
-
-
-        <ul class="nav-list col-12">
-            <li class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
-                <i class="bi bi-search search"></i>
-                <input type="search" placeholder="Search...">
-            </li>
-            <li class="mt-3">
-                <a href="#dashboard">
-                    <i class="bi bi-columns-gap ps-2"></i>
-                    <span class="links-name">Dashboard</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-search ps-2"></i>
-                    <span class="links-name">Explore</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-newspaper ps-2"></i>
-                    <span class="links-name">Profile</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-person ps-2"></i>
-                    <span class="links-name">Ward</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-clock-history ps-2"></i>
-                    <span class="links-name">Sessions</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-hospital ps-2"></i>
-                    <span class="links-name">Nearest hospitals</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-heart-pulse ps-2"></i>
-                    <span class="links-name">Wellness& Lifestyle</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-credit-card ps-2"></i>
-                    <span class="links-name">Finance</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-calendar ps-2"></i>
-                    <span class="links-name">Manage subscription</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-question-circle ps-2"></i>
-                    <span class="links-name">Help/platform feedback</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-gear ps-2"></i>
-                    <span class="links-name">Settings</span>
-                </a>
-            </li>
-        </ul>
-
+            <div class="container-fluid">
+                <div class="row row-one">
+                    <div class="col-12 mt-3">
+                        <h3 class="d-flex align-items-center ps-3">Home/Dashboard</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <script>
-        let toggleBtn = document.querySelector(".toggle-btn");
-        let sidebar = document.querySelector(".sidebar");
-        let searchBtn = document.querySelector(".search");
-        const closeButton = document.querySelector("#close-btn");
-
-        toggleBtn.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
-
-        closeButton.onclick = function () {
-            sidebar.classList.remove("active");
-        }
-
-        searchBtn.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
-    </script>
-
 
 
 
