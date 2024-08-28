@@ -45,6 +45,20 @@ body {
     box-shadow: 0px 4px 4px #BAB9B9;
 
 }
+.exist {
+    background-color: #BDD0F5;
+    border-radius: 8px;
+    border-style: none;
+    width: 267px;
+    padding-top: -30px;
+    color: black;
+}
+.exist:hover {
+background-color: #BDD0F5;
+color: black;
+
+
+}
 
 #welcome {
     color: #363636;
