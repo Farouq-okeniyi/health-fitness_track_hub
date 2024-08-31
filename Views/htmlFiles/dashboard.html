@@ -134,19 +134,26 @@
                         </a>
 
                     </li>
-                    <li>
-                        <a href="#" id="finance-link">
+
+                    <li class="dropdown finance">
+                        <a href="./finance.html" id="finance-link" class="dropdown-toggle">
                             <i class="bi bi-credit-card ps-2"></i>
                             <span class="links-name">Finance</span>
+                            <i class="bi bi-chevron-down float-end"></i>
                         </a>
-
+                        <ul id="finance-dropdown" class="dropdown-content">
+                            <li><a href="" class="ps-2" id="invoice-link">Invoice</a></li>
+                            <li><a href="" class="ps-2" id="card-link">Card</a></li>
+                        </ul>
                     </li>
+
+
+
                     <li>
-                        <a href="#" id="manageSubscription-link">
+                        <a href="./subscriptions.html" id="manageSubscription-link" class="toggle-sublinks">
                             <i class="bi bi-calendar ps-2"></i>
                             <span class="links-name">Manage subscription</span>
                         </a>
-
                     </li>
                     <li>
                         <a href="#" id="help-link">
@@ -154,11 +161,18 @@
                             <span class="links-name">Help/platform feedback</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" id="settings-link">
+
+
+                    <li class="dropdown settings">
+                        <a href="#" id="settings-link" class="dropdown-toggle">
                             <i class="bi bi-gear ps-2"></i>
                             <span class="links-name">Settings</span>
+                            <i class="bi bi-chevron-down float-end"></i>
                         </a>
+                        <ul class="dropdown-content">
+                            <li><a href="" class="ps-2" id="changePassWord-link">Change Password</a></li>
+                            <li><a href="" class="ps-2" id="logout-link">Log out</a></li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -192,7 +206,7 @@
 
                     </span>
                 </div>
-                <div class="row-four d-flex flex-row" id="row-four">
+                <div class="row-four d-flex flex-row" id="collapse-row">
                     <div class="col  bg-white">
                         <img class="img-fluid main-img" src="./../resourcesFiles/Frame 147.png">
                         <span class="pb-4">

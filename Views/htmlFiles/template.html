@@ -201,59 +201,45 @@
 
         .row-two {
             display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            width: 498px;
-            height: 198px;
-            border-radius: 16px;
-            background: var(--secondary-background);
-        }
-
-        .row-two h2 {
-            font-size: 30px;
-            font-weight: 600;
-            line-height: 39.57px;
-        }
-
-        .row-two .bi {
-            font-size: 24px;
-            color: var(--hover-background);
-        }
-
-        .row-three {
-            display: flex;
             align-items: end;
             height: 60px;
             background: var(--secondary-background);
             justify-content: space-between;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
         }
 
-        .row-three span {
+        .row-two span {
             display: flex;
             flex-direction: row;
+            align-items: center;
         }
 
-        .row-three h4 {
-            font-size: 20px;
+        .row-two h4 {
+            font-size: 16px;
             font-weight: 600;
-            line-height: 26.38px;
+            line-height: 21.1px;
             margin-bottom: 0;
+            color: var(--primary-text-color);
         }
 
-        .row-three .ico {
-            border-right: 5px solid var(--secondary-background);
+
+        .row-two .ico {
+            padding-right: .5rem;
         }
 
-        .row-three .ico i {
+        .row-two .ico i {
             background-color: var(--body-background);
-            border: 3px solid var(--secondary-background);
-            border-radius: 8px;
-            font-size: 12.63px;
+            border: 1px solid var(--secondary-background);
+            border-radius: 50%;
+            font-size: 13px;
             width: 20px;
             height: 20px;
             color: #3c3c3c;
-            text-align: center;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
 
@@ -315,7 +301,7 @@
             border-radius: 8px;
         }
 
-        .sidebar ul li a.active {
+        .sidebar ul li a.Active {
             color: var(--secondary-text-color);
             background: var(--hover-background);
             transition: var(--tran-02);
@@ -342,6 +328,66 @@
             display: none;
         }
 
+        /*        TESTING CODE            */
+
+        .dropdown-content {
+            transform-origin: top;
+            transform: scaleY(0);
+            opacity: 0;
+            max-height: 0;
+            transition: all 0.3s ease-out;
+        }
+
+        .finance,
+        .settings {
+            margin-bottom: 0%;
+
+            transition: var(--tran-05);
+        }
+
+        .finance .dropdown-toggle::after,
+        .settings .dropdown-toggle::after {
+            display: none;
+        }
+
+        .finance.hide,
+        .settings.settings-hide {
+            margin-bottom: 30%;
+        }
+
+        .finance.settings-hide {
+            margin-bottom: 0;
+        }
+
+        .sidebar .finance ul li,
+        .sidebar .settings ul li {
+            width: 70%;
+            height: 2rem;
+            padding: 1rem 0;
+            margin-top: .5rem;
+            margin-left: 3rem;
+
+        }
+
+        .dropdown-content.show {
+            transform: scaleY(1);
+            opacity: 1;
+            max-height: 100px;
+            /* adjust this value based on your content */
+            transition: all 0.3s ease-out 0.2s;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .dropdown-toggle .bi-chevron-down {
+            transition: transform 0.3s ease-out;
+        }
+
+        .dropdown-toggle.active .bi-chevron-down {
+            transform: rotate(180deg);
+        }
 
 
         /* <!--SIDE BAR FOR SMALLER SCREEN SIZES--> */
@@ -419,7 +465,7 @@
             }
 
             .sidebar.active {
-                position: absolute;
+                position: fixed;
                 top: 0;
                 left: 0;
                 height: 100%;
@@ -725,19 +771,24 @@
                         </a>
 
                     </li>
-                    <li>
-                        <a href="#" id="finance-link">
+                    <li class="dropdown finance">
+                        <a href="./finance.html" id="finance-link" class="dropdown-toggle">
                             <i class="bi bi-credit-card ps-2"></i>
                             <span class="links-name">Finance</span>
+                            <i class="bi bi-chevron-down float-end"></i>
                         </a>
-
+                        <ul id="finance-dropdown" class="dropdown-content">
+                            <li><a href="" class="ps-2" id="invoice-link">Invoice</a></li>
+                            <li><a href="" class="ps-2" id="card-link">Card</a></li>
+                        </ul>
                     </li>
+
+
                     <li>
-                        <a href="#" id="manageSubscription-link">
+                        <a href="./subscriptions.html" id="manageSubscription-link" class="toggle-sublinks">
                             <i class="bi bi-calendar ps-2"></i>
                             <span class="links-name">Manage subscription</span>
                         </a>
-
                     </li>
                     <li>
                         <a href="#" id="help-link">
@@ -745,13 +796,19 @@
                             <span class="links-name">Help/platform feedback</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" id="settings-link">
+                    <li class="dropdown settings">
+                        <a href="#" id="settings-link" class="dropdown-toggle">
                             <i class="bi bi-gear ps-2"></i>
                             <span class="links-name">Settings</span>
+                            <i class="bi bi-chevron-down float-end"></i>
                         </a>
+                        <ul class="dropdown-content">
+                            <li><a href="" class="ps-2" id="changePassWord-link">Change Password</a></li>
+                            <li><a href="" class="ps-2" id="logout-link">Log out</a></li>
+                        </ul>
                     </li>
                 </ul>
+
             </div>
 
             <div class="container-fluid">
