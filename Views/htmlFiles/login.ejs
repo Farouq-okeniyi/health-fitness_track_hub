@@ -55,57 +55,66 @@
     </div>
     <script>
         document.getElementById('loginForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent default form submission
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-            try {
-                const response = await fetch('/Healtify/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, password }),
-                });
+    try {
+        const response = await fetch('/Healtify/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
 
-                const result = await response.json();
-                console.log(result);
+            body: JSON.stringify({ email, password }),
 
-                if (response.ok) {
-                    // Store the user data in localStorage
-                    localStorage.setItem('user', JSON.stringify(result.user));
-
-                    // Redirect to the dashboard
-                    window.location.href = '/Healtify/dashboard';
-                } else {
-                    // Handle validation errors
-                    console.log('display error');
-                    console.log(result.message);
-
-                    // Clear previous error messages
-                    document.getElementById('email-error').textContent = '';
-                    document.getElementById('password-error').textContent = '';
-                    document.getElementById('error-message').textContent = '';
-
-                    // Display specific error messages
-                    const emailMessage = result.message.email ? result.message.email.replace(/^"|"$/g, '') : '';
-                    const passwordMessage = result.message.password ? result.message.password.replace(/^"|"$/g, '') : '';
-
-                    // Update error message elements
-                    document.getElementById('email-error').textContent = emailMessage;
-                    document.getElementById('password-error').textContent = passwordMessage;
-                }
-            } catch (error) {
-                console.error('Error during login:', error);
-                document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
-            }
         });
 
-        function displayErrors(errors) {
-            const errorMessageElement = document.getElementById('error-message');
-            errorMessageElement.innerHTML = errors;
+        if (response.ok) {
+            const result = await response.json();
+            console.log(result)
+            window.location.href = '/Healtify/dashboard';
+        } else {
+            const result = await response.json();
+            document.getElementById('error-message').textContent = result.message;
         }
+    } catch (error) {
+        console.log('Error during login');
+        document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
+    }
+});
+        //  document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        //     event.preventDefault(); // Prevent default form submission
+
+        //     const email = document.getElementById('email').value;
+        //     const password = document.getElementById('password').value;
+
+        //     try {
+        //         const response = await fetch('/Healtify/login', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+
+        //             },
+        //             body: JSON.stringify({ email, password }),
+        //         });
+
+        //         if (response.ok) {
+        //             const result = await response.json();
+        //             // Store the token in localStorage
+        //             localStorage.setItem('token', result.token);
+        //             // Redirect to the dashboard
+        //             // window.location.href = '/dashboard';
+        //         } else {
+        //             const result = await response.json();
+        //             document.getElementById('error-message').textContent = result.message;
+        //         }
+        //     } catch (error) {
+        //         // console.error('Error during login:', error);
+        //         document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
+        //     }
+        // });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
