@@ -38,7 +38,7 @@
         </div>
         
         <div class="form">
-            <div class="error-message text-danger mb-3"></div>
+            <div  class="error-message text-danger mb-3"></div>
             <form action="/Healtify/signup" method="post" id="signup-form">
                 <div class="form-group">
                     <label for="fullName" class="form-label">Full Name</label>
@@ -138,18 +138,19 @@
             const response = await fetch('/Healtify/signup', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
             });
 
             // Handle server response
             const result = await response.json();
+            console.log(result);
             if (response.ok) {
                 alert('Signup successful!');
                  // Store the user data in localStorage
-                 console.log(result.user)
-                 localStorage.setItem('user', JSON.stringify(result.user));
+                 console.log(result)
+                 localStorage.setItem('user', JSON.stringify(result));
 
 
                 window.location.href = '/Healtify/dashboard';

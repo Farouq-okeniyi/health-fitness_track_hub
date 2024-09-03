@@ -104,18 +104,17 @@ header {
     color: #f9f9f9;
     width: 207px;
     height: 46px;
-    /* position: relative; */
-    display: flex;
-    flex-direction: column;
     top: 70px;
     border-radius: 20px;
     border: 2px solid #0202EA;
     padding: 14px, 44px, 14px, 44px;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
     cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
 
+.section-one a:hover {
+    background-color: #3030C8;
 }
 
 /*MEDIA QUERY FOR SECTION ONE*/
@@ -260,6 +259,12 @@ header {
     color: #F9F9F9;
     margin-top: 50px;
     border: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #5379C2;
+    color: #F9F9F9;
 }
 
 @media(max-width:576px) {
@@ -316,6 +321,10 @@ header {
     color: #5e5e5e;
 }
 
+.section-four .first-column:hover {
+    transform: translateY(-10%);
+}
+
 .section-four .col-12 .col-6 img {
     width: 100%;
     max-width: 75px;
@@ -323,6 +332,8 @@ header {
 
 .section-four .col-12 .first-column {
     padding-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+
 }
 
 
@@ -454,6 +465,11 @@ header {
     font-weight: 400;
     line-height: 21.1px;
     color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.section-six #btn:hover {
+    background-color: #4369B2;
 }
 
 /*MEDIA QUERY FOR SECTION-SIX */
@@ -516,6 +532,11 @@ header {
     line-height: 21.1px;
     border: none;
     margin-top: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.section-seven button:hover {
+    background-color: #5379C2;
 }
 
 /* MEDIA QUERY FOR SECTION SEVEN*/
@@ -535,6 +556,7 @@ header {
 .review-container {
     display: flex;
     overflow-x: auto;
+    scrollbar-width: thin;
     padding: 20px;
 }
 
@@ -914,8 +936,13 @@ input[type="radio"]:checked::before {
 
 
 .bi-arrow-up-circle-fill {
-    color: #F9F9F9;
+    color: #4369B2;
     font-size: 48px;
+    transition: all 0.4s ease-in-out;
+}
+
+.bi-arrow-up-circle-fill:hover {
+    color: #B84646;
 }
 
 .back-to-top {

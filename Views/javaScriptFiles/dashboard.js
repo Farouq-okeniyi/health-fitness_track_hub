@@ -3,7 +3,8 @@ let sidebar = document.querySelector(".sidebar");
 let searchBtn = document.querySelector(".search");
 const closeButton = document.querySelector("#close-btn");
 const arrow = document.querySelector(".TOGGLE")
-const rowFour = document.querySelector("#row-four")
+const collapseRow = document.querySelector("#collapse-row")
+
 sectionTwo = document.querySelector(".sub-sec")
 
 toggleBtn.onclick = function () {
@@ -24,8 +25,7 @@ arrow.addEventListener('click', () => {
 })
 
 function toggleRowFour() {
-
-    rowFour.classList.toggle('collapsed');
+    collapseRow.classList.toggle('collapsed');
     sectionTwo.classList.toggle('fill-gap');
 }
 
@@ -40,6 +40,41 @@ document.addEventListener('DOMContentLoaded', function () {
     // Find the link that corresponds to the current page and add the 'active' class
     var link = document.getElementById(page + '-link');
     if (link) {
-        link.classList.add('active');
+        link.classList.add('Active');
+    }
+});
+
+
+
+
+const financeLink = document.getElementById('finance-link');
+const financeDropdown = document.getElementById('finance-dropdown');
+const settingsLink = document.getElementById('settings-link');
+const settingsDropdown = document.getElementById('settings-dropdown');
+const dropdown = document.querySelector('.finance', '.settings')
+
+financeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+
+    if (currentPage === 'finance') {
+        financeDropdown.classList.toggle('show');
+        dropdown.classList.toggle('hide');
+        console.log(dropdown);
+
+
+    } else {
+        window.location.href = 'http://127.0.0.1:5501/Views/htmlFiles/finance.html';
+    }
+});
+
+settingsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+
+    if (currentPage === 'settings') {
+        settingsDropdown.classList.toggle('show');
+    } else {
+        window.location.href = 'http://127.0.0.1:5501/Views/htmlFiles/settings.html';
     }
 });
