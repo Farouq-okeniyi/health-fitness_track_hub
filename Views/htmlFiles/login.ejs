@@ -41,32 +41,52 @@
                     </div>
                     <div class="form-group">
                         <label for="password" class="form-label"></label>
-                        <input type="password" id="password" name="password" class="form-control mx-auto" placeholder="Password">
+                        <input type="password" id="password" name="password" class="form-control mx-auto"
+                            placeholder="Password">
                         <span id="password-error" class="text-danger"></span> <!-- Password error message -->
                     </div>
+<<<<<<< HEAD
                     <button onclick="loginValidation()" class="btn btn-primary" type="submit">
                         <img src="./../resourcesFiles/Arrow Pointing Left (2).png" class="my-auto">
                     </button>
                 </form>
+=======
+                    <div class="footer">
+                        <a href="./forgotpassword.html">Forgot Password? </a>
+                        <button onclick="loginValidation()" type="submit"><img
+                                src="./../resourcesFiles/Arrow Pointing Left (2).png" class="my-auto"></button>
+                        <a href="./signup.html">Click here to Sign Up!</a>
+                    </div>
+                </form>
+
+>>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
             </div>
         </div>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('loginForm').addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
 
+<<<<<<< HEAD
     const [email, password] = [document.getElementById('email').value, document.getElementById('password').value];
+=======
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+>>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
 
-    try {
-        const response = await fetch('/Healtify/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+                try {
+                    const response = await fetch('/Healtify/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
 
-            body: JSON.stringify({ email, password }),
+                        body: JSON.stringify({ email, password }),
 
-        });
+                    });
 
+<<<<<<< HEAD
         if (response.ok) {
             const result = await response.json();
             console.log(result)
@@ -81,6 +101,52 @@
         document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
     }
 });
+=======
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log(result)
+                        window.location.href = '/Healtify/dashboard';
+                    } else {
+                        const result = await response.json();
+                        document.getElementById('error-message').textContent = result.message;
+                    }
+                } catch (error) {
+                    console.log('Error during login');
+                    document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
+                }
+            });
+        //  document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        //     event.preventDefault(); // Prevent default form submission
+
+        //     const email = document.getElementById('email').value;
+        //     const password = document.getElementById('password').value;
+
+        //     try {
+        //         const response = await fetch('/Healtify/login', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+
+        //             },
+        //             body: JSON.stringify({ email, password }),
+        //         });
+
+        //         if (response.ok) {
+        //             const result = await response.json();
+        //             // Store the token in localStorage
+        //             localStorage.setItem('token', result.token);
+        //             // Redirect to the dashboard
+        //             // window.location.href = '/dashboard';
+        //         } else {
+        //             const result = await response.json();
+        //             document.getElementById('error-message').textContent = result.message;
+        //         }
+        //     } catch (error) {
+        //         // console.error('Error during login:', error);
+        //         document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
+        //     }
+        // });
+>>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -88,5 +154,9 @@
     <script src="./../javaScriptFiles/login.js"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
 <!-- swipper -->
+=======
+</html>
+>>>>>>> c027aff43b52c59439686cec292afef8f1292b2f

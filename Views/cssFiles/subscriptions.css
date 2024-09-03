@@ -99,6 +99,12 @@ header {
     margin-left: 1em;
 }
 
+.nav-right .dropdown-toggle {
+    width: 100%;
+    max-width: 150px;
+    padding: 12px 19px;
+}
+
 .form-control {
     width: 230px;
     height: auto;
@@ -148,8 +154,6 @@ header {
 }
 
 .nav-right .dropdown-toggle::after {
-    position: relative;
-    left: 15%;
     font-size: 1.6em;
 
 }
@@ -160,7 +164,8 @@ header {
 }
 
 .nav-right .dropdown-toggle .bi {
-    margin-right: 15%;
+    font-size: 1.2rem;
+    margin-right: .4rem;
 }
 
 .dropdown-content {
@@ -264,7 +269,8 @@ header {
 }
 
 .bi-person-fill {
-    font-size: 20px;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
 .row-two .ico {

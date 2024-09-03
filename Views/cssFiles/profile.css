@@ -458,7 +458,7 @@ header {
     transform: scaleY(0);
     max-height: 0;
     overflow: hidden;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .row-four #input {
