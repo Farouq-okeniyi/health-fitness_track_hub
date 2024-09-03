@@ -1,10 +1,26 @@
 let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
 
+function showform() {
+    const imagediv = document.getElementById('imagediv');
+    const form = document.getElementById('form');
+
+    if (imagediv.style.position === 'absolute' || imagediv.style.position === '') {
+        imagediv.style.position = 'relative';
+        form.style.display = 'block';
+        form.style.opacity = 1;
+    } else {
+        imagediv.style.position = 'absolute';
+        form.style.display = 'none';
+        form.style.opacity = 0;
+    }
+}
+  
+
 function loginValidation() {
 
-    email = emailInput.value;
-    password = passwordInput.value;
+    email = email.value;
+    password = password.value;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (email === "" && password === "") {
@@ -24,8 +40,5 @@ function loginValidation() {
         document.getElementById("error-message").innerHTML = "Password must be at least 8 characters";
     } else {
         document.getElementById("error-message").style.display = "block";
-        document.getElementById("error-message").innerHTML = "Login Successful"
-        console.log('Login Successful');
-
     }
 }
