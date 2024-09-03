@@ -6,7 +6,9 @@ const jwt = require('jsonwebtoken');
 const {userValidationSchema} = require('./../Model/validationModel')
 const {loginvalidation} = require('../Model/loginValidationModel')
 const axios = require('axios');
-const util = require('util')
+const util = require('util');
+const CustomError = require('../Utility/CustomError');
+
 
 const signToken = id =>{
     return jwt.sign({id}, process.env.SECRET_STR, {expiresIn: process.env.EXPIRES_IN})
@@ -48,13 +50,12 @@ const  getLoginpage = function(req,res){
 
 const getDashBoard = function(req, res) {
     try {
-        // const user = req.user; // Assuming you've populated req.user with the logged-in user's info
-       
-        // console.log(token)
-
         res.render('htmlFiles/dashboard', { user }); // Pass the user object to the EJS template
+
     } catch (error) {
-        console.error('Error:', error);
+
+        console.log('Error:', error);
+
         res.status(500).json({
             status: 'error',
             message: 'An error occurred while loading the dashboard. Please try again later.'
@@ -79,10 +80,8 @@ const logUserIn = async function(req, res, next) {
         const isMatch = await User.comparePasswordInDB(password, User.password);
 
         if (!isMatch || !User) {
-            return res.status(422).json({
-                status: 'fail',
-                message: 'Incorrect Login Information'
-            });
+            const error = new CustomError('incorrect Login Details',401)
+            next(error)
         }
 
         const token = signToken(User._id);
@@ -93,11 +92,8 @@ const logUserIn = async function(req, res, next) {
             user: User
         })
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({
-            status: 'error',
-            message: 'An error occurred. Please try again later.'
-        });
+        const err = new CustomError('an Error occured, please try again later', 500)
+            next(err)
     }
 };  
 const sighUserup =async function(req, res, next){
@@ -119,10 +115,8 @@ const sighUserup =async function(req, res, next){
         const CheckEMail = await user.findOne({email: email});
 
         if(CheckEMail){
-            return res.status(422).json({
-                status:'fail',
-                message:'Email Already Exists'
-            })
+            const error = new CustomError('Email already Exists',422)
+            next(error)
         }
         // If validation passes, proceed to create the user
         const User = await user.create(value);
@@ -135,11 +129,8 @@ const sighUserup =async function(req, res, next){
                 });
 
     } catch (err) {
-        console.error('Error:', err);
-        res.status(500).json({
-            status: 'error',
-            message: 'An error occurred. Please try again later.'
-        });
+        const error = new CustomError('SOrry, Pkease try again later', 500)
+            next(error)
 
     };}
 
@@ -148,23 +139,50 @@ const sighUserup =async function(req, res, next){
 
         console.log('Token from cookie:', token);
         if (!token) {
-            return res.status(401).json({ message: 'Not authorized, token missing or invalid' });
+            const error = new CustomError('Not authorized, token missing or invalid', 401)
+            next(error)
         }
         
         try {
 
             // Verify the token and extract the payload
-            const decoded = await util.promisify(jwt.verify)(token, process.env.SECRET_STR);
+            const decodedToken = await util.promisify(jwt.verify)(token, process.env.SECRET_STR);
             
             // Attach the user data to the request object for further use in the route
-            console.log(decoded)
+            console.log(decodedToken)
             // Proceed to the next middleware or route handler
+            const User = await user.findById(decodedToken.id)
+            const passwordISChanged = await User.isChangedPassword(decodedToken.iat)
+            console.log(passwordISChanged)
+            if(!User){
+                const error = new CustomError('the user with given TOken does not exist', 401)
+                next(error)
+            }
+            if(passwordISChanged){
+                return res.status(401).json({
+                    status: 'error',
+                    message: 'Password changed recently, please Login again'
+                
+                });
+
+            }
+            req.user = user
             next();
         } catch (error) {
-            console.error('Token verification error:', error);
-            return res.status(401).json({ message: 'Not authorized, token invalid' });
+            const err = new CustomError('Not authorized, token invalid', 401)
+            next(err)
         }
         next();
+    }
+
+    const restrict = (role)=>{
+            return (res,req,next)=>{
+                if(req.user.role!== role){
+                    const err = new CustomError('Sorry! you are not permitted to perfrom this action', 403)
+                     next(err)
+                }
+            }
+            next()
     }
 module.exports={
     getHomepage,
@@ -179,6 +197,8 @@ module.exports={
 
     sighUserup,
 
-    protect
+    protect,
+
+    restrict,
 
 }
