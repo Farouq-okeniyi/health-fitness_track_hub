@@ -24,9 +24,6 @@
       </div>
 
       <div class="container-fluid d-flex row">
-            <div class="col-6" id="imagediv">
-                <img onclick="showform()" src="./../resourcesFiles/pexels-photo-4031818 1.png" class="img-fluid first-image mx-md-auto">
-            </div>
             <div class="col-6" id="form">
                 <img src="./../resourcesFiles/Frame 124 (1).png" class="img-fluid d-block mx-auto pt-2 my-auto">
                 <h4>Login</h4>
@@ -45,12 +42,6 @@
                             placeholder="Password">
                         <span id="password-error" class="text-danger"></span> <!-- Password error message -->
                     </div>
-<<<<<<< HEAD
-                    <button onclick="loginValidation()" class="btn btn-primary" type="submit">
-                        <img src="./../resourcesFiles/Arrow Pointing Left (2).png" class="my-auto">
-                    </button>
-                </form>
-=======
                     <div class="footer">
                         <a href="./forgotpassword.html">Forgot Password? </a>
                         <button onclick="loginValidation()" type="submit"><img
@@ -59,7 +50,6 @@
                     </div>
                 </form>
 
->>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
             </div>
         </div>
     <script>
@@ -68,12 +58,7 @@
             document.getElementById('loginForm').addEventListener('submit', async function (event) {
                 event.preventDefault(); // Prevent default form submission
 
-<<<<<<< HEAD
     const [email, password] = [document.getElementById('email').value, document.getElementById('password').value];
-=======
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
->>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
 
                 try {
                     const response = await fetch('/Healtify/login', {
@@ -86,25 +71,11 @@
 
                     });
 
-<<<<<<< HEAD
-        if (response.ok) {
-            const result = await response.json();
-            console.log(result)
-            
-            window.location.href = '/Healtify/dashboard';
-        } else {
-            const result = await response.json();
-            document.getElementById('error-message').textContent = result.message;
-        }
-    } catch (error) {
-        console.log('Error during login');
-        document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
-    }
-});
-=======
                     if (response.ok) {
                         const result = await response.json();
                         console.log(result)
+                        sessionStorage.setItem('user', JSON.stringify(result.user));
+                        //  document.cookie = `User=${JSON.stringify(result)}`
                         window.location.href = '/Healtify/dashboard';
                     } else {
                         const result = await response.json();
@@ -114,7 +85,8 @@
                     console.log('Error during login');
                     document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
                 }
-            });
+            })
+        });
         //  document.getElementById('loginForm').addEventListener('submit', async function(event) {
         //     event.preventDefault(); // Prevent default form submission
 
@@ -146,7 +118,6 @@
         //         document.getElementById('error-message').textContent = 'An error occurred. Please try again later.';
         //     }
         // });
->>>>>>> c027aff43b52c59439686cec292afef8f1292b2f
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -154,9 +125,5 @@
     <script src="./../javaScriptFiles/login.js"></script>
 </body>
 
-<<<<<<< HEAD
 </html>
 <!-- swipper -->
-=======
-</html>
->>>>>>> c027aff43b52c59439686cec292afef8f1292b2f

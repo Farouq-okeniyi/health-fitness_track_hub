@@ -22,7 +22,7 @@ header {
 .nav-bar {
     height: 100px;
     /* padding: 26px 0px; */
-
+    color: white;
     width: 100%;
 }
 
@@ -33,7 +33,7 @@ header {
 
 .scrolled {
     background-color: #fff !important;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .scrolled .navlink {
@@ -48,18 +48,18 @@ header {
 
 .unscrolled {
     background-color: transparent !important;
-    transition: background-color 1s ease-out
+    transition: all 1s ease-out
 }
 
 .unscrolled .bg-body-tertiary {
     background-color: transparent !important;
-    transition: background-color 1s ease-out
+    transition: all 1s ease-out
 }
 
 .unscrolled .navlink {
-    color: #000 !important;
+    color: white !important;
     /* Ensure nav links also change color */
-    transition: color 1s ease-in-out;
+    transition: color 0.5s ease-in-out;
 }
 
 .navlink {

@@ -50,8 +50,8 @@ const  getLoginpage = function(req,res){
 
 const getDashBoard = function(req, res) {
     try {
+        const user = req.user
         res.render('htmlFiles/dashboard', { user }); // Pass the user object to the EJS template
-
     } catch (error) {
 
         console.log('Error:', error);
@@ -120,14 +120,18 @@ const sighUserup =async function(req, res, next){
         }
         // If validation passes, proceed to create the user
         const User = await user.create(value);
-
+        
+        req.user = User
         const token = signToken(User._id)
+        // const token = signToken(User._id);
+
+        res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
         res.status(201).json({
             status: 'success',
             token,
             user: User
                 });
-
+    
     } catch (err) {
         const error = new CustomError('SOrry, Pkease try again later', 500)
             next(error)
@@ -166,7 +170,8 @@ const sighUserup =async function(req, res, next){
                 });
 
             }
-            req.user = user
+            req.user = User
+            console.log(req.user)
             next();
         } catch (error) {
             const err = new CustomError('Not authorized, token invalid', 401)
