@@ -564,11 +564,6 @@ header {
     margin-left: 360px;
 }
 
-.search_bar {
-    position: sticky;
-    z-index: 1;
-}
-
 .search_bar .form-control {
     width: 300px;
     height: 44px;
@@ -720,7 +715,7 @@ header {
 
 .doctors-list {
     height: 100%;
-    max-height: 804px;
+    max-height: 1804px;
     overflow-y: auto;
     scrollbar-width: none;
     background-color: #f0f0f0;
@@ -777,7 +772,7 @@ header {
 
 .doctors-list span {
     margin-top: 53px;
-    background: var(--secondary-background);
+    background: #f0f0f0;
 }
 
 @media (max-width: 576px) {
