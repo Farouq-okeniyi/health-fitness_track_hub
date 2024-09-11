@@ -265,9 +265,6 @@ header {
     margin-bottom: 30%;
 }
 
-.finance.settings-hide {
-    margin-bottom: 0;
-}
 
 .sidebar .finance ul li,
 .sidebar .settings ul li {
@@ -276,7 +273,6 @@ header {
     padding: 1rem 0;
     margin-top: .5rem;
     margin-left: 3rem;
-
 }
 
 .dropdown-content.show {

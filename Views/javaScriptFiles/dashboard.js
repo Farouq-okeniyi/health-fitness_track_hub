@@ -73,4 +73,6 @@ financeLink.addEventListener('click', (e) => {
 settingsLink.addEventListener('click', (e) => {
     e.preventDefault();
     settingsDropdown.classList.toggle('show');
+    console.log(settingsDropdown);
+
 });
