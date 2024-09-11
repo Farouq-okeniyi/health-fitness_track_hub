@@ -21,11 +21,9 @@ header {
     color: blue
 }
 
-.nav-bar {
+.navbar {
+    background-color: #fff;
     height: 100px;
-    /* padding: 26px 0px; */
-    color: white;
-    width: 100%;
 }
 
 .nav-active {
@@ -60,7 +58,6 @@ header {
 
 .unscrolled .navlink {
     color: #000 !important;
-    /* Ensure nav links also change color */
     transition: color 0.5s ease-in-out;
 }
 
@@ -86,8 +83,30 @@ header {
     color: #0202EA;
 }
 
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    font-size: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-grow: 1;
+
+}
+
 .section-two {
     background: #E6E5E5;
+}
+
+.section-two #container {
+    padding: 4% 0;
 }
 
 .section-two h3 {
@@ -96,6 +115,7 @@ header {
     line-height: 39.57px;
     color: #0202EA;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .section-two p {
@@ -103,13 +123,53 @@ header {
     font-weight: 700;
     line-height: 39.57px;
     color: #3c3c3c;
+    margin-bottom: 0;
 }
 
 .section-two p span {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 39.57px;
     color: #3c3c3c;
+}
+
+@media (max-width:576px) {
+    .section-two #container {
+        padding: 4% 4%;
+    }
+
+    .section-two h3 {
+        font-size: px;
+    }
+
+    .section-two p {
+        font-size: 24px;
+    }
+
+    .section-two p span {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+    }
+
+    .navbar-brand img {
+        width: 80%;
+    }
+
+    .navbar {
+        height: 0px;
+    }
+}
+
+@media (max-width:1024px) {
+    .navbar-toggler-icon {
+        font-size: 20px;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
 }
 
 .section-three {
@@ -152,7 +212,7 @@ header {
 
 .email-input-container .img-fluid {
     position: absolute;
-    top: 40%;
+    top: 30%;
     transform: translateY(-20%);
     left: 95.9%;
     font-size: 16px;

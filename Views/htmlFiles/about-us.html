@@ -15,24 +15,35 @@
 </head>
 
 <body>
-    <nav id="navbar"
-        class=" nav-bar sticky-top d-flex justify-content-between bg-body-tertiary bg-transparent navbar-light">
+    <nav id="navbar" class=" navbar sticky-top navbar-expand-lg">
         <div class="container d-flex justify-content-between align-items-center ">
-            <div class="col-7">
+            <div class="navbar-brand">
                 <a href="./index.html"><img class="img-fluid" src="../resourcesFiles/healthifyLogo.png" alt=""></a>
             </div>
-            <div class="col-5 d-flex nav-item justify-content-between">
-                <a class="navlink text-right" href="signup">SIGN UP</a>
-                <a class="navlink" href="login">LOGIN</a>
-                <a class="navlink" href="#features">FEATURES</a>
-                <a class="navlink" href="">BLOG</a>
-                <a class="navlink " href="">CONTACT</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-item collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-end align-items-center">
+                    <li class="mx-3"><a class="navlink" href="signup">SIGN UP</a></li>
+                    <li class="mx-3"><a class="navlink" href="login">LOGIN</a></li>
+                    <li class="mx-3"><a class="navlink" href="#features">FEATURES</a></li>
+                    <li class="mx-3"><a class="navlink" href="">BLOG</a></li>
+                    <li class="mx-3"><a class="navlink" href="">CONTACT</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
+
+
+
+
+
+
+
     <section class="section-two">
-        <div class="container">
+        <div class="container" id="container">
             <h3>About Us</h3>
             <p>Why Healthify?<br>
                 <span class="text">
@@ -49,8 +60,8 @@
                     by
                     optimizing resources using technology, increasing patient satisfaction by providing quality care
                     with a
-                    one-stop solution, and Minimizing stress by reducing time and travel.</span><br>
-                Why are we Different?
+                    one-stop solution, and Minimizing stress by reducing time and travel.</span><br><br>
+                Why are we Different?<br>
                 <span class="text">
                     Healthify founders and Doctors want to achieve 100% accurate diagnosis before starting a patient
                     care
