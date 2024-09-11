@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var link = document.getElementById(page + '-link');
     if (link) {
         link.classList.add('Active');
+        console.log("It is active");
+
     }
 });
 

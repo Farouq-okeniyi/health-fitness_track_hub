@@ -37,8 +37,8 @@
             <p id="create">Create your free account</p>
         </div>
         
-        <div class="form">
-            <div  class="error-message text-danger mb-3"></div>
+        <div class="form"  action="/Healtify/signupx" method="post">
+            <div  class="error-message-global text-danger mb-3"></div>
             <form action="/Healtify/signup" method="post" id="signup-form">
                 <div class="form-group">
                     <label for="fullName" class="form-label">Full Name</label>
@@ -108,78 +108,142 @@
     crossorigin="anonymous"></script>
 
    <script> 
-    document.querySelectorAll('.form-control').forEach(input => {
-        input.addEventListener('input', function () {
-            this.classList.remove('is-invalid'); // Remove invalid class on input
-            this.nextElementSibling.textContent = ''; // Clear specific error message
-            document.querySelector('.error-message').textContent = ''; // Clear general error message
+   document.querySelector('#signup-form').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Collect and serialize form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        // Clear previous error messages
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.classList.remove('is-invalid');
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan && errorSpan.classList.contains('text-danger')) {
+                errorSpan.textContent = '';
+            }
         });
-    });
+        document.querySelector('.error-message-global').textContent = '';
 
-    document.querySelector('#signup-form').addEventListener('submit', async function (e) {
-        e.preventDefault(); // Prevent the default form submission
+        // Send form data to the server
+        const response = await fetch('/Healtify/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
 
-        // Collect and serialize form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
+        // Handle server response
+        const result = await response.json();
+        console.log(result);
 
-        try {
-            // Clear previous error messages
-            document.querySelectorAll('.form-control').forEach(input => {
-                input.classList.remove('is-invalid');
-                const errorSpan = input.nextElementSibling;
-                if (errorSpan && errorSpan.classList.contains('text-danger')) {
-                    errorSpan.textContent = '';
-                }
-            });
-            document.querySelector('.error-message').textContent = '';
-
-            // Send form data to the server
-            const response = await fetch('/Healtify/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-
-            // Handle server response
-            const result = await response.json();
-            console.log(result);
-            if (response.ok) {
-                alert('Signup successful!');
-                 // Store the user data in localStorage
-                 console.log(result)
-                 localStorage.setItem('user', JSON.stringify(result));
-
-
-                window.location.href = '/Healtify/dashboard';
-            } else if (response.status === 422) {
-                // Display validation errors
-                if (result.errors) {
-                    for (let key in result.errors) {
-                        const inputElement = document.querySelector(`[name="${key}"]`);
-                        if (inputElement) {
-                            inputElement.classList.add('is-invalid');
-                            const errorSpan = inputElement.nextElementSibling;
-                            if (errorSpan && errorSpan.classList.contains('text-danger')) {
-                                errorSpan.textContent = result.errors[key];
-                            }
+        if (response.ok) {
+            alert('Signup successful!');
+            window.location.href = '/Healtify/dashboard';
+        } else if (response.status === 422) {
+            // Display validation errors
+            if (result.errors) {
+                for (let key in result.errors) {
+                    const inputElement = document.querySelector(`[name="${key}"]`);
+                    if (inputElement) {
+                        inputElement.classList.add('is-invalid');
+                        const errorSpan = inputElement.nextElementSibling;
+                        if (errorSpan && errorSpan.classList.contains('text-danger')) {
+                            errorSpan.textContent = result.errors[key];
                         }
                     }
-                } else {
-                    console.log(result)
-                    document.querySelector('.error-message').textContent = result.message || 'Validation failed. Please check your input.';
                 }
             } else {
-                // Handle other types of errors
-                document.querySelector('.error-message').textContent = result.message || 'An unexpected error occurred.';
+                // Display full error object in the global error message
+                const { message, status, stackTrace } = result;
+                document.querySelector('.error-message-global').textContent = `
+                    Error: ${message}
+                `;
             }
-        } catch (error) {
-            console.error('Error:', error); // Log error for debugging
-            document.querySelector('.error-message').textContent = 'An error occurred. Please try again later.';
+        } else {
+            // Handle other types of errors
+            document.querySelector('.error-message-global').textContent = result.message || 'An unexpected error occurred.';
         }
-    });
+    } catch (error) {
+        console.error('Error:', error); // Log error for debugging
+        document.querySelector('.error-message-global').textContent = 'An error occurred. Please try again later.';
+    }
+});
+
+    // document.querySelectorAll('.form-control').forEach(input => {
+    //     input.addEventListener('input', function () {
+    //         this.classList.remove('is-invalid'); // Remove invalid class on input
+    //         this.nextElementSibling.textContent = ''; // Clear specific error message
+    //         document.querySelector('.error-message').textContent = ''; // Clear general error message
+    //     });
+    // });
+
+    // document.querySelector('#signup-form').addEventListener('submit', async function (e) {
+    //     e.preventDefault(); // Prevent the default form submission
+
+    //     // Collect and serialize form data
+    //     const formData = new FormData(this);
+    //     const data = Object.fromEntries(formData.entries());
+
+    //     try {
+    //         // Clear previous error messages
+    //         document.querySelectorAll('.form-control').forEach(input => {
+    //             input.classList.remove('is-invalid');
+    //             const errorSpan = input.nextElementSibling;
+    //             if (errorSpan && errorSpan.classList.contains('text-danger')) {
+    //                 errorSpan.textContent = '';
+    //             }
+    //         });
+    //         document.querySelector('.error-message').textContent = '';
+
+    //         // Send form data to the server
+    //         const response = await fetch('/Healtify/signup', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(data)
+    //         });
+
+    //         // Handle server response
+    //         const result = await response.json();
+    //         console.log(result);
+    //         if (response.ok) {
+    //             alert('Signup successful!');
+    //              // Store the user data in localStorage
+    //              console.log(result)
+    //             //  localStorage.setItem('user', JSON.stringify(result));
+
+
+    //             window.location.href = '/Healtify/dashboard';
+    //         } else if (response.status === 422) {
+    //             // Display validation errors
+    //             if (result.errors) {
+    //                 for (let key in result.errors) {
+    //                     const inputElement = document.querySelector(`[name="${key}"]`);
+    //                     if (inputElement) {
+    //                         inputElement.classList.add('is-invalid');
+    //                         const errorSpan = inputElement.nextElementSibling;
+    //                         if (errorSpan && errorSpan.classList.contains('text-danger')) {
+    //                             errorSpan.textContent = result.errors[key];
+    //                         }
+    //                     }
+    //                 }
+    //             } else {
+    //                 console.log(result)
+    //                 document.querySelector('.error-message-global').textContent = result.message || 'Validation failed. Please check your input.';
+    //             }
+    //         } else {
+    //             // Handle other types of errors
+    //             document.querySelector('.error-message').textContent = result.message || 'An unexpected error occurred.';
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error); // Log error for debugging
+    //         document.querySelector('.error-message').textContent = 'An error occurred. Please try again later.';
+    //     }
+    // });
 </script>
 </body>
 </html>

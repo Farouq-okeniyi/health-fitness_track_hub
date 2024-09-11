@@ -15,6 +15,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 50%;
+    margin: auto;
+    background-color: white;
 }
 
 #imagediv {
@@ -22,10 +25,6 @@ body {
     transition: position, 2s ease-in-out;
 }
 
-/* .imagediv-relative {
-    position: relative;
-    transition: position, 2s ease-in-out;
-} */
 .first-image {
     width: 100%;
     height: auto;
@@ -71,22 +70,6 @@ button {
  /* display: none; */
     margin-bottom: 1rem;
 }
-#form {
-   display: none;
-    background-color: #f8f9fa;
-    border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    opacity: 0; /* Start with hidden form */
-    transition: opacity, 2s ease-in-out; /* Smooth transition for opacity */
-}
-
-.form-visible {
-    display: block; 
-    opacity: 1; 
-    position: relative;
-    transition: position, 0.5s ease-in-out; /* Smooth transition for opacity */
-    /* transition: display, 2s ease-in-out; Smooth transition for opacity */
-}  
 @media (max-width: 576px) {
     .first-image {
         max-width: 80%;
