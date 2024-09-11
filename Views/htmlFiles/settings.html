@@ -176,7 +176,7 @@
 
             </div>
 
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                 <div class="row row-one">
                     <div class="col-12 mt-5">
                         <h3 class="d-flex align-items-center ps-3">Settings/Change Password</h3>
@@ -184,6 +184,30 @@
                     <div class="col-two mt-3"><p>Change Password</p></div>
                 </div>
                 
+            </div> -->
+            <div class="container-fluid container3">
+                <div class="row1"><p>Settings/Change Password</p></div>
+                <div class="row2"><p>Change Password</p></div>
+                <div class="row3">
+                    <form action="" method="post">
+                        <label for="oldPassword" class="form-label">Old Password *</label>
+                            <input name="oldPassword"  value=""  type="password" id="oldPassword" class="form-control" placeholder="Old Password">
+                            <span class="text-danger"></span>
+                
+                            <label for="newPassword" class="form-label">New Password *</label>
+                            <input name="newPassword"  value=""  type="password" id="newPassword" class="form-control" placeholder="New Password">
+                            <span class="text-danger"></span>
+
+                            <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                            <input name="confirmPassword"  value=""  type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+                            <span class="text-danger"></span>
+
+                
+                    </form>
+                </div>
+                <div class="row4">
+                    <button class="btn btn-primary" type="submit">Change Password</button>
+                </div>
             </div>
         </section>
     </div>
@@ -192,7 +216,7 @@
 
 
 
-
+<script src="./../javaScriptFiles/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
