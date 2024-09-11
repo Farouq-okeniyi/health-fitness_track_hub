@@ -72,11 +72,5 @@ financeLink.addEventListener('click', (e) => {
 
 settingsLink.addEventListener('click', (e) => {
     e.preventDefault();
-    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
-
-    if (currentPage === 'settings') {
-        settingsDropdown.classList.toggle('show');
-    } else {
-        window.location.href = 'http://127.0.0.1:5501/Views/htmlFiles/settings.html';
-    }
+    settingsDropdown.classList.toggle('show');
 });

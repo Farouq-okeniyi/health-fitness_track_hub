@@ -3,9 +3,11 @@
     padding: 0px;
     font-family: "Roboto slab";
 }
-body{
-    overflow-x:hidden;
+
+body {
+    overflow-x: hidden;
 }
+
 header {
     background-image: linear-gradient(34.24deg, #B84646 48.1%, #2C2C65 89.63%);
     background-attachment: fixed;
@@ -636,6 +638,13 @@ header {
 
 }
 
+.section-nine label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.74px;
+    color: #f9f9f9;
+}
+
 .email-input-container {
     position: relative;
     width: 100%;
@@ -723,10 +732,6 @@ input[type="radio"]:checked::before {
     font-weight: 400;
     line-height: 26.38px;
     color: #f9f9f9;
-}
-
-.section-nine form {
-    margin-top: 8%;
 }
 
 .section-nine .gender-form {
@@ -845,7 +850,7 @@ input[type="radio"]:checked::before {
 
 @media(min-width:992px) {
     .section-nine .paragraph {
-        margin-bottom: 90px;
+        margin-bottom: 70px;
     }
 }
 

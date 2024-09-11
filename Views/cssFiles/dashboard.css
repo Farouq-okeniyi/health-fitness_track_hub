@@ -494,6 +494,10 @@ header {
     margin-top: 20px;
 }
 
+.sidebar #settings-dropdown {
+    margin-top: 0;
+}
+
 .sidebar ul li {
     width: 100%;
     height: 48px;
