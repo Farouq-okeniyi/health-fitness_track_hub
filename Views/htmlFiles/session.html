@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPLATE</title>
+    <link rel="icon" type="image.png" href="./../resourcesFiles/g848.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../cssFiles/session.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="toggle-btn">
+                    <i class="bi bi-list" id="#btn"></i>
+                </div>
+                <div class="logo">
+                    <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
+                </div>
+
+                <div class="menu-bar d-none d-sm-none d-md-none d-lg-none d-xl-block ms-xl-3">
+                    <button class="dropdown-toggle d-flex align-items-center justify-content-center" id="toggle"
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-star-fill"></i>
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu" id="menu">
+                        <li class="dropdown-item">Call</li>
+                        <li class="dropdown-item">Contact Tech Team</li>
+                    </ul>
+                </div>
+                <div class="search-bar d-none d-sm-none d-md-none d-lg-none d-xl-block">
+                    <input type="search" id="search-input" placeholder="Search for a doc..." class="form-control">
+                </div>
+            </div>
+
+
+            <div class="nav-right">
+                <div class="notification-btn">
+                    <span>
+                        <i class="bi bi-bell-fill"><span class="badge mx-1" id="count">0</span></i>
+                    </span>
+                </div>
+                <div class="dropdown user-profile d-none d-sm-none d-md-none d-lg-none d-xl-block">
+                    <button class="dropdown-toggle d-flex align-items-center justify-content-center" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill"></i>
+                        User Profile
+                    </button>
+                    <ul class="dropdown-menu" id="menu">
+                        <li class="dropdown-item">Newsong</li>
+                        <li class="dropdown-item">Newsong</li>
+                        <li class="dropdown-item">Newsong</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container-fluid main-content">
+        <section class="section-one">
+            <div class="sidebar closed">
+                <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+                    <div class="logo">
+                        <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+                    </div>
+
+                    <i class="bi bi-x-lg" id="close-btn"></i>
+                </div>
+
+
+                <ul class="nav-list col-12 px-2">
+                    <li class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
+                        <i class="bi bi-search search"></i>
+                        <input type="search" placeholder="Search...">
+                    </li>
+                    <li class="mt-3">
+                        <a href="./dashboard.html" id="dashboard-link">
+                            <i class="bi bi-columns-gap ps-2"></i>
+                            <span class="links-name">Dashboard</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="explore-link">
+                            <i class="bi bi-search ps-2"></i>
+                            <span class="links-name">Explore</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./profile.html" id="profile-link">
+                            <i class="bi bi-newspaper ps-2"></i>
+                            <span class="links-name">Profile</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="ward-link">
+                            <i class="bi bi-person ps-2"></i>
+                            <span class="links-name">Ward</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="sessions-link">
+                            <i class="bi bi-clock-history ps-2"></i>
+                            <span class="links-name">Sessions</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="hospitals-link">
+                            <i class="bi bi-hospital ps-2"></i>
+                            <span class="links-name">Nearest hospitals</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" id="wellness-link">
+                            <i class="bi bi-heart-pulse ps-2"></i>
+                            <span class="links-name">Wellness& Lifestyle</span>
+                        </a>
+
+                    </li>
+                    <li class="dropdown finance">
+                        <a href="./finance.html" id="finance-link" class="dropdown-toggle">
+                            <i class="bi bi-credit-card ps-2"></i>
+                            <span class="links-name">Finance</span>
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <ul id="finance-dropdown" class="dropdown-content">
+                            <li><a href="" class="ps-2" id="invoice-link">Invoice</a></li>
+                            <li><a href="" class="ps-2" id="card-link">Card</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="./subscriptions.html" id="manageSubscription-link" class="toggle-sublinks">
+                            <i class="bi bi-calendar ps-2"></i>
+                            <span class="links-name">Manage subscription</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="help-link">
+                            <i class="bi bi-question-circle ps-2"></i>
+                            <span class="links-name">Help/platform feedback</span>
+                        </a>
+                    </li>
+                    <li class="dropdown settings">
+                        <a href="#" id="settings-link" class="dropdown-toggle">
+                            <i class="bi bi-gear ps-2"></i>
+                            <span class="links-name">Settings</span>
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="" class="ps-2" id="changePassWord-link">Change Password</a></li>
+                            <li><a href="" class="ps-2" id="logout-link">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="container-fluid container3">
+                <div class="form">
+                    <label for="selectInstitute" class="form-label"></label>
+                    <select name="selectInstitute" class="form-select form-select mb-4" value="Select Institute" aria-label="medium select example">
+                        <option value="">Select Institute</option>
+                        <option value="Heart & Vascular Institute-Consult Cardiologist online">Heart & Vascular Institute-Consult Cardiologist online</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Psychiatry & Mental wellness-Consult Psychiatrist Online">Psychiatry & Mental wellness-Consult Psychiatrist Online</option>
+                        <option value="Orthopedic & Sport Injury">Orthopedic & Sport Injury</option>
+                        <option value="Family medicine & General medicine-Consult general physician online">Family medicine & General medicine-Consult general physician online</option>
+                        <option value="Gynecology-Consult Gynecologist online">Gynecology-Consult Gynecologist online</option>
+                        <option value="Dermatology-Consult Dermatologist online">Dermatology-Consult Dermatologist online</option>
+                        <option value="Neurology-Consult Neurologist online">Neurology-Consult Neurologist online</option>
+                    </select>
+                    <select name="selectInstitute" class="form-select form-select mb-4" value="Select Institute" aria-label="medium select example">
+                        <option selected>Select Doctor</option>
+                        <!-- <option value="Heart & Vascular Institute-Consult Cardiologist online"><img src="" alt="">Heart & Vascular Institute-Consult Cardiologist online</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Psychiatry & Mental wellness-Consult Psychiatrist Online">Psychiatry & Mental wellness-Consult Psychiatrist Online</option>
+                        <option value="Orthopedic & Sport Injury">Orthopedic & Sport Injury</option>
+                        <option value="Family medicine & General medicine-Consult general physician online">Family medicine & General medicine-Consult general physician online</option>
+                        <option value="Gynecology-Consult Gynecologist online">Gynecology-Consult Gynecologist online</option>
+                        <option value="Dermatology-Consult Dermatologist online">Dermatology-Consult Dermatologist online</option>
+                        <option value="Neurology-Consult Neurologist online">Neurology-Consult Neurologist online</option> -->
+                    </select>
+                    <select name="selectInstitute" class="form-select form-select mb-5" value="Select Institute" aria-label="medium select example">
+                        <option value="">Select Location </option>
+                        <option value="Online">Online</option>
+
+                    </select>
+                    <label for="date">Select Date:</label>
+                    <input type="date" class="calender"  id="date">
+                </div>
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-primary">Morning</button>
+                        <button type="submit" class="btn btn-primary">Afternoon</button>
+                        <button type="submit" class="btn btn-primary">Evening</button>
+                    
+                    </div>
+                    <div class="button2">
+                        <button type="submit" class="btn next justify-items-center">Next</button>
+                    </div>
+            </div>
+        </div>
+                      
+    </section>
+</div> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
