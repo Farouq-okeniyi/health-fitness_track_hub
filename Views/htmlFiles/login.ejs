@@ -79,9 +79,6 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', async function (event) {
             event.preventDefault(); // Prevent the default form submission
-            document.getElementById('loginForm').addEventListener('submit', async function (event) {
-                event.preventDefault(); // Prevent default form submission
-
                 const [email, password] = [document.getElementById('email').value, document.getElementById('password').value];
 
                 try {
@@ -109,8 +106,6 @@
                 }
 
             });
-
-            })
 
        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
