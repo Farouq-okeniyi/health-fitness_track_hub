@@ -611,6 +611,11 @@ label {
     .auto-responder button {
         margin-right: 0px;
     }
+
+    button {
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -687,11 +692,15 @@ label {
     }
 
     .sidebar.active {
-        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 370px;
         margin: 0;
         z-index: 100;
     }
+
 
     .logo-content {
         padding-top: 20px;
