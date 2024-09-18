@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Subscriptions</title>
-    <link rel="icon" type="image.png" href="./../resourcesFiles/g848.png">
+    <title>WARD</title>
+    <link rel="icon" type="image.png" href="/resourcesFiles/g848.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./../cssFiles/subscriptions.css">
+    <link rel="stylesheet" href="/cssFiles/finance.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="nav-container">
             <div class="nav-left">
@@ -25,7 +26,7 @@
                     <i class="bi bi-list" id="#btn"></i>
                 </div>
                 <div class="logo">
-                    <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
+                    <img src="/resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
                 </div>
 
                 <div class="menu-bar d-none d-sm-none d-md-none d-lg-none d-xl-block ms-xl-3">
@@ -55,7 +56,7 @@
                     <button class="dropdown-toggle d-flex align-items-center justify-content-center" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-fill"></i>
-                        User Profile
+                        <%= user.fullName %>
                     </button>
                     <ul class="dropdown-menu" id="menu">
                         <li class="dropdown-item">Newsong</li>
@@ -67,12 +68,13 @@
         </div>
     </header>
 
+
     <div class="container-fluid main-content">
         <section class="section-one">
             <div class="sidebar closed">
                 <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
                     <div class="logo">
-                        <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+                        <img src="/resourcesFiles/healthifyLogo.png" alt="Logo">
                     </div>
 
                     <i class="bi bi-x-lg" id="close-btn"></i>
@@ -85,56 +87,57 @@
                         <input type="search" placeholder="Search...">
                     </li>
                     <li class="mt-3">
-                        <a href="./dashboard.html" id="dashboard-link">
+                        <a href="/Healtify/dashboard/dashboard" id="dashboard-link">
                             <i class="bi bi-columns-gap ps-2"></i>
                             <span class="links-name">Dashboard</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="./explore.html" id="explore-link">
+                        <a href="#" id="explore-link">
                             <i class="bi bi-search ps-2"></i>
                             <span class="links-name">Explore</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="./profile.html" id="profile-link">
+                        <a href="/Healtify/dashboard/profile" id="profile-link">
                             <i class="bi bi-newspaper ps-2"></i>
                             <span class="links-name">Profile</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="./ward.html" id="ward-link">
+                        <a href="/Healtify/dashboard/ward" id="ward-link">
                             <i class="bi bi-person ps-2"></i>
                             <span class="links-name">Ward</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#" id="sessions-link">
+                        <a href="/Healtify/dashboard/session" id="sessions-link">
                             <i class="bi bi-clock-history ps-2"></i>
                             <span class="links-name">Sessions</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#" id="hospitals-link">
+                        <a href="/Healtify/dashboard/nearesthospital" id="hospitals-link">
                             <i class="bi bi-hospital ps-2"></i>
                             <span class="links-name">Nearest hospitals</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#" id="wellness-link">
+                        <a href="/Healtify/dashboard/wellness" id="wellness-link">
                             <i class="bi bi-heart-pulse ps-2"></i>
                             <span class="links-name">Wellness& Lifestyle</span>
                         </a>
 
                     </li>
+
                     <li class="dropdown finance">
-                        <a href="./finance.html" id="finance-link" class="dropdown-toggle">
+                        <a href="/Healtify/dashboard/finance" id="finance-link" class="dropdown-toggle">
                             <i class="bi bi-credit-card ps-2"></i>
                             <span class="links-name">Finance</span>
                             <i class="bi bi-chevron-down float-end"></i>
@@ -146,25 +149,28 @@
                     </li>
 
 
+
                     <li>
-                        <a href="#" id="subscriptions-link">
+                        <a href="/Healtify/dashboard/subscription" id="manageSubscription-link" class="toggle-sublinks">
                             <i class="bi bi-calendar ps-2"></i>
                             <span class="links-name">Manage subscription</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./helpdesk.html" id="help-link">
+                        <a href="#" id="help-link">
                             <i class="bi bi-question-circle ps-2"></i>
                             <span class="links-name">Help/platform feedback</span>
                         </a>
                     </li>
+
+
                     <li class="dropdown settings">
-                        <a href="#" id="settings-link" class="dropdown-toggle">
+                        <a href="/Healtify/dashboard/settings" id="settings-link" class="dropdown-toggle">
                             <i class="bi bi-gear ps-2"></i>
                             <span class="links-name">Settings</span>
                             <i class="bi bi-chevron-down float-end"></i>
                         </a>
-                        <ul class="dropdown-content" id="settings-dropdown">
+                        <ul class="dropdown-content">
                             <li><a href="" class="ps-2" id="changePassWord-link">Change Password</a></li>
                             <li><a href="" class="ps-2" id="logout-link">Log out</a></li>
                         </ul>
@@ -173,81 +179,101 @@
 
             </div>
 
-            <div class="container-fluid">
-                <div class="row row-one">
-                    <div class="col-12 mt-3">
-                        <h3 class="d-flex align-items-center ps-3">Manage subscriptions</h3>
-                    </div>
-                </div>
-                <div class="row-two mt-4">
+            <div class="container-fluid main-content">
+                <div class="row-one mt-4">
                     <span class="ps-2 pb-1">
                         <i class="bi bi-person-fill me-1"></i>
-                        <h4>Manage subscriptions</h4>
+                        <h4>My Doctors</h4>
                     </span>
                     <span class="ico pb-1 pe-2">
                         <i class="bi bi-gear-fill"></i>
-                        <i class="bi bi-caret-down-fill TOGGLE"></i>
+                        <i class="bi bi-caret-up-fill TOGGLE"></i>
                         <i class="bi bi-x-lg"></i>
                     </span>
                 </div>
 
                 <div id="collapse-row">
-                    <div class="row-three mt-4">
+                    <div class="row-two mt-4">
                         <div class="col-12 mt-3">
-                            <h3 class="d-flex align-items-center ps-3">Subscriptions gives you access to Healthify
-                                doctors
-                                for free. Healthify doctors have our logo attached to their names on the app.</h3>
+                            <h3 class="d-flex align-items-center ps-3">Check through your doctor list</h3>
                         </div>
                     </div>
 
-                    <div class="table">
-                        <table>
-                            <tr>
-                                <th>
-                                    <p>Cost</p>
-                                </th>
-                                <th>
-                                    <p>Description</p>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td><button type="button" class="btn free">Free</button></td>
-                                <td>
-                                    <p>Daily Free Trial</p>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn subscribeNow">Subscribe Now!</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><button type="button" class="btn free">Free</button></td>
-                                <td>
-                                    <p>1 Week Free Trial</p>
-                                </td>
-                                <td><button type="button" class="btn subscribeNow">Subscribe Now!</button> </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span currency="NGN">NGN 1,500.00</span>
-                                </td>
-                                <td>
-                                    <p>1 Month Premium Subscription</p>
-                                </td>
-                                <td><button type="button" class="btn subscribeNow">Subscribe Now!</button> </td>
-                            </tr>
-                            <tr>
-                                <td> <span currency="NGN">NGN 5,000.00</span></td>
-                                <td>
-                                    <p>1 Year Premium Subscription</p>
-                                </td>
-                                <td><button type="button" class="btn subscribeNow">Subscribe Now!</button> </td>
-                            </tr>
-                        </table>
+                    <div class="row d-flex align-items-center mx-auto">
+                        <div class="row d-flex align-items-center">
+                            <div
+                                class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1">
+                                <span>
+                                    Show
+                                    <select name="entries" id="data-entries">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    entries
+                                </span>
+                            </div>
+                            <div
+                                class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2 mb-4 mb-sm-4 mb-md-0 mb-lg-0 mb-xl-0 mt-3 mt-sm-3 mt-md-0 mt-lg-0 mt-xl-0 d-flex justify-content-end search_bar">
+                                <input type="search" name="search" id="search-form" class="form-control"
+                                    placeholder="Search here">
+                            </div>
+                        </div>
+
+                        <div class="table mb-0">
+                            <table class="mt-2  mx-auto">
+                                <tr class="px-5">
+                                    <th>Username</th>
+                                    <th>Full Name</th>
+                                    <th>Phone number</th>
+                                    <th>Gender</th>
+                                    <th>Date Added</th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="text mx-auto">
+                            <p>No data available in table</p>
+                        </div>
+                        <div class="mt-4">
+                            <p>Showing 0 to 0 of 0 Entries</p>
+                        </div>
+                        <footer class="text-center mt-4">
+                            <a href="" class="me-5">Previous</a>
+                            <a href="" class="ms-5">Next</a>
+                        </footer>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

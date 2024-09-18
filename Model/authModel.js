@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt');
 const { date } = require('joi');
+const crypto = require('crypto')
 
 //schema for sighnup
 // Schema for signup
@@ -21,7 +22,11 @@ const userSchema = new mongoose.Schema({
 
     confirmPassword:{type: String,required: [true, 'Please confirm your password']},
 
-    changedPasswordAT:Date
+    changedPasswordAT:Date,
+
+    passwordResetToken:String,
+
+    passwordResetTokenExpires: Date
 });
  userSchema.pre('save', async function(next){
     if(!this.isModified('password')) return next();
@@ -49,6 +54,19 @@ const userSchema = new mongoose.Schema({
  return false
  }
 
+userSchema.methods.generateRandomToken = function(){
+
+  const resetToken = crypto.randomBytes(32).toString('hex')
+
+  
+  this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex')
+
+
+  this.passwordResetTokenExpires = Date.now() + (10 * 60 * 1000)
+ 
+
+  return resetToken
+}
 const User = mongoose.model(('createdusers'), userSchema);
 
 module.exports = User;

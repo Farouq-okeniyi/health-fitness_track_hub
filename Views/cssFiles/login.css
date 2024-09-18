@@ -8,7 +8,6 @@
 body {
     background-color: #C5C3C3;
     height: 100vh;
-    overflow: hidden;
 }
 .container-fluid {
     display: flex;
@@ -20,18 +19,6 @@ body {
     background-color: white;
 }
 
-#imagediv {
-    position: absolute;
-    transition: position, 2s ease-in-out;
-}
-
-.first-image {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
 h4 {
     text-align: center;
     color: #A9A3A3;
@@ -41,7 +28,6 @@ h4 {
 }
 
 p {
-    width: 440px;
     height: 35px;
     padding: 5px 123px 2px 123px;
     border-radius: 10px;
@@ -70,6 +56,41 @@ button {
  /* display: none; */
     margin-bottom: 1rem;
 }
+#heart {
+    animation-name: heartbeat;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  
+  @keyframes heartbeat {
+    0%   { transform: scale(1);    }
+    30%  { transform: scale(1);    }
+    40%  { transform: scale(1.12); }
+    50%  { transform: scale(1);    }
+    60%  { transform: scale(1);    }
+    70%  { transform: scale(1.08); }
+    80%  { transform: scale(1);    }
+    100% { transform: scale(1);    }
+  }
+#loading {
+    position: fixed;
+    display: none ;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 @media (max-width: 576px) {
     .first-image {
         max-width: 80%;

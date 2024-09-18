@@ -19,7 +19,27 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
-<body>
+<body id="body">
+    <script>
+        window.onload = function() {
+           setTimeout(function() {
+               document.getElementById("loading").style.display = "none";
+               document.getElementById('body').style.overflowY = "scroll";
+            document.getElementsByClassName('navlink')
+
+           }, 3 * 1000); 
+       };
+       
+       </script>
+       <div id="loading">
+       <svg  id="heart" width="72" height="59" viewBox="0 0 72 59" xmlns="http://www.w3.org/2000/svg">
+            <title>heart</title>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M36.86 8.665l3.172-3.172c7.146-7.146 18.733-7.146 25.88 0 7.146 7.147 7.146 18.733 0 25.88L54.037 43.246c2.973-7.252 1.54-15.863-4.314-21.718L36.86 8.665z" fill="#6078EA"/>
+              <path d="M47.164 24.294L28.922 6.052C22.39-.48 11.8-.48 5.268 6.052s-6.532 17.122 0 23.654l27.7 27.7c1.308 1.31 3.43 1.31 4.738 0l9.458-9.458c6.532-6.532 6.532-17.122 0-23.654z" fill="#74BFFF"/>
+            </g>
+          </svg>  
+    </div>
     <!-- nav bar -->
 
     <!-- I am adding this header so that the background color doesnt apply to the entire body, just the the contents of the header element -->
@@ -494,6 +514,7 @@
 
 
 
+</body>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -503,7 +524,6 @@
         });
     </script>
 
-</body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
