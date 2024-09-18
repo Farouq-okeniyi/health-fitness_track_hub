@@ -276,6 +276,64 @@
             display: none;
         }
 
+        .container3 {
+            margin-left: 50px;
+            background-color: #F9F9F9;
+            margin-top: 100px;
+            width: 80%;
+            padding: 0;
+            padding-bottom: 60px;
+        }
+        .row1 {
+            background-color: #EBE9E9;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            margin-bottom: 20px;
+
+        }
+        .row1 p {
+            padding: 10px 10px 10px 20px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #3C3C3C;
+
+        }
+        .row2 {
+            background-color: #BDD0F5;
+            border-radius: 8px;
+            max-width: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
+            
+        }
+        .row2 p {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #3C3C3C;
+        }
+        .row3 {
+            padding: 20px 10px;
+        }
+       .row3 .form-control{
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid #06062F;
+            background-color: #F9F9F9;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+        .row4 .btn {
+            margin-left: 550px;
+            background-color: #4369B2;
+            border-radius: 10px;
+        }
+        @media  (max-width: 576px) {
+            .row4 .btn {
+                margin-left: 180px;
+            }
+            
+        }
         /*        TESTING CODE            */
 
         .dropdown-content {
