@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance</title>
-    <link rel="icon" type="image.png" href="./../resourcesFiles/g848.png">
+    <title>SETTINGS</title>
+    <link rel="icon" type="image.png" href="/resourcesFiles/g848.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./../cssFiles/finance.css">
+    <link rel="stylesheet" href="/cssFiles/settings.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    
 
     <header>
         <div class="nav-container">
@@ -26,7 +27,7 @@
                     <i class="bi bi-list" id="#btn"></i>
                 </div>
                 <div class="logo">
-                    <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
+                    <img src="/resourcesFiles/healthifyLogo.png" alt="Logo" class="img-fluid">
                 </div>
 
                 <div class="menu-bar d-none d-sm-none d-md-none d-lg-none d-xl-block ms-xl-3">
@@ -56,7 +57,7 @@
                     <button class="dropdown-toggle d-flex align-items-center justify-content-center" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-fill"></i>
-                        User Profile
+                        <%= user.fullName %>
                     </button>
                     <ul class="dropdown-menu" id="menu">
                         <li class="dropdown-item">Newsong</li>
@@ -74,7 +75,7 @@
             <div class="sidebar closed">
                 <div class="logo-content d-flex d-sm-flex d-md-flex d-lg-flex d-xl-none">
                     <div class="logo">
-                        <img src="./../resourcesFiles/healthifyLogo.png" alt="Logo">
+                        <img src="/resourcesFiles/healthifyLogo.png" alt="Logo">
                     </div>
 
                     <i class="bi bi-x-lg" id="close-btn"></i>
@@ -94,7 +95,7 @@
 
                     </li>
                     <li>
-                        <a href="./explore.html" id="explore-link">
+                        <a href="#" id="explore-link">
                             <i class="bi bi-search ps-2"></i>
                             <span class="links-name">Explore</span>
                         </a>
@@ -108,14 +109,14 @@
 
                     </li>
                     <li>
-                        <a href="./ward.html" id="ward-link">
+                        <a href="#" id="ward-link">
                             <i class="bi bi-person ps-2"></i>
                             <span class="links-name">Ward</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="./session.html" id="sessions-link">
+                        <a href="#" id="sessions-link">
                             <i class="bi bi-clock-history ps-2"></i>
                             <span class="links-name">Sessions</span>
                         </a>
@@ -136,38 +137,37 @@
 
                     </li>
                     <li class="dropdown finance">
-                        <a href="#" id="finance-link" class="dropdownToggle">
+                        <a href="./finance.html" id="finance-link" class="dropdown-toggle">
                             <i class="bi bi-credit-card ps-2"></i>
                             <span class="links-name">Finance</span>
                             <i class="bi bi-chevron-down float-end"></i>
                         </a>
                         <ul id="finance-dropdown" class="dropdown-content">
-                            <li><a href="./finance-invoice.html" class="ps-2" id="invoice-link">Invoice</a></li>
-                            <li><a href="./finance-CARD.html" class="ps-2" id="card-link">Card</a></li>
+                            <li><a href="" class="ps-2" id="invoice-link">Invoice</a></li>
+                            <li><a href="" class="ps-2" id="card-link">Card</a></li>
                         </ul>
                     </li>
 
 
                     <li>
-                        <a href="./subscriptions.html" id="subscriptions-link" class="toggle-sublinks">
+                        <a href="./subscriptions.html" id="manageSubscription-link" class="toggle-sublinks">
                             <i class="bi bi-calendar ps-2"></i>
                             <span class="links-name">Manage subscription</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./helpdesk.html" id="help-link">
+                        <a href="#" id="help-link">
                             <i class="bi bi-question-circle ps-2"></i>
                             <span class="links-name">Help/platform feedback</span>
                         </a>
                     </li>
-
                     <li class="dropdown settings">
-                        <a href="./forgotpassword.html" id="settings-link" class="dropdownToggle">
+                        <a href="#" id="settings-link" class="dropdown-toggle">
                             <i class="bi bi-gear ps-2"></i>
                             <span class="links-name">Settings</span>
                             <i class="bi bi-chevron-down float-end"></i>
                         </a>
-                        <ul id="settings-dropdown" class="dropdown-content">
+                        <ul class="dropdown-content">
                             <li><a href="" class="ps-2" id="changePassWord-link">Change Password</a></li>
                             <li><a href="" class="ps-2" id="logout-link">Log out</a></li>
                         </ul>
@@ -176,79 +176,37 @@
 
             </div>
 
-            <div class="container-fluid main-content">
-                <div class="row-one mt-4">
-                    <span class="ps-2 pb-1">
-                        <i class="bi bi-person-fill me-1"></i>
-                        <h4>Finance</h4>
-                    </span>
-                    <span class="ico pb-1 pe-2">
-                        <i class="bi bi-gear-fill"></i>
-                        <i class="bi bi-caret-down-fill TOGGLE"></i>
-                        <i class="bi bi-x-lg"></i>
-                    </span>
+            <!-- <div class="container-fluid">
+                <div class="row row-one">
+                    <div class="col-12 mt-5">
+                        <h3 class="d-flex align-items-center ps-3">Settings/Change Password</h3>
+                    </div>
+                    <div class="col-two mt-3"><p>Change Password</p></div>
                 </div>
+                
+            </div> -->
+            <div class="container-fluid container3">
+                <div class="row1"><p>Settings/Change Password</p></div>
+                <div class="row2"><p>Change Password</p></div>
+                <div class="row3">
+                    <form action="" method="post">
+                        <label for="oldPassword" class="form-label">Old Password *</label>
+                            <input name="oldPassword"  value=""  type="password" id="oldPassword" class="form-control" placeholder="Old Password">
+                            <span class="text-danger"></span>
+                
+                            <label for="newPassword" class="form-label">New Password *</label>
+                            <input name="newPassword"  value=""  type="password" id="newPassword" class="form-control" placeholder="New Password">
+                            <span class="text-danger"></span>
 
-                <div id="collapse-row">
-                    <div class="row-two mt-4">
-                        <div class="col-12 mt-3">
-                            <h3 class="d-flex align-items-center ps-3">View your finances and click the button to view
-                                the
-                                relative invoice.</h3>
-                        </div>
-                    </div>
+                            <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                            <input name="confirmPassword"  value=""  type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+                            <span class="text-danger"></span>
 
-                    <div class="row d-flex align-items-center mx-auto">
-                        <div class="row">
-                            <div
-                                class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1">
-                                <span>
-                                    Show
-                                    <select name="entries" id="data-entries">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                    entries
-                                </span>
-                            </div>
-                            <div
-                                class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2 mb-4 mb-sm-4 mb-md-0 mb-lg-0 mb-xl-0 mt-3 mt-sm-3 mt-md-0 mt-lg-0 mt-xl-0 d-flex justify-content-end search_bar">
-                                <input type="search" name="search" id="search-form" class="form-control"
-                                    placeholder="Search here">
-                            </div>
-                        </div>
-
-                        <div class="table">
-                            <table class="mt-2  mx-auto">
-                                <tr>
-                                    <th>Note</th>
-                                    <th>Debit</th>
-                                    <th>Credit</th>
-                                    <th>Balance</th>
-                                    <th>TransDate</th>
-                                    <th></th>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="text">
-                            <p>No data available in table</p>
-                        </div>
-                        <div class="mt-4">
-                            <p>Showing 0 to 0 of 0 Entries</p>
-                        </div>
-                        <footer class="text-center mt-4">
-                            <a href="" class="me-5">Previous</a>
-                            <a href="" class="ms-5">Next</a>
-                        </footer>
-                    </div>
+                
+                    </form>
+                </div>
+                <div class="row4">
+                    <button class="btn btn-primary" type="submit">Change Password</button>
                 </div>
             </div>
         </section>
@@ -258,35 +216,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="./../javaScriptFiles/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./../javaScriptFiles/dashboard.js"></script>
 </body>

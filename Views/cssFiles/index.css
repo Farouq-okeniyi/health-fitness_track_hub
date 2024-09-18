@@ -6,12 +6,16 @@
 
 body {
     overflow-x: hidden;
+ overflow-y: hidden;
 }
-
+body::-webkit-scrollbar {
+    display: none;
+  }
 header {
     background-image: linear-gradient(34.24deg, #B84646 48.1%, #2C2C65 89.63%);
     background-attachment: fixed;
     background-size: 100%;
+    padding-bottom: 40px;
 }
 
 .bg-body-tertiary {
@@ -23,7 +27,6 @@ header {
 
 .nav-bar {
     height: 100px;
-    /* padding: 26px 0px; */
     color: white;
     width: 100%;
 }
@@ -41,6 +44,8 @@ header {
 .scrolled .navlink {
     color: #000 !important;
     transition: color 1s ease-in-out;
+    pointer-events: none; /* Prevents clicking */
+    cursor: not-allowed;
 }
 
 .scrolled .navlink:hover {
@@ -121,6 +126,43 @@ header {
     background-color: #3030C8;
 }
 
+#heart {
+    animation-name: heartbeat;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  
+  @keyframes heartbeat {
+    0%   { transform: scale(1);    }
+    30%  { transform: scale(1);    }
+    40%  { transform: scale(1.12); }
+    50%  { transform: scale(1);    }
+    60%  { transform: scale(1);    }
+    70%  { transform: scale(1.08); }
+    80%  { transform: scale(1);    }
+    100% { transform: scale(1);    }
+  }
+#loading {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    pointer-events: none; /* Prevents clicking */
+    cursor: not-allowed; 
+    /* top: 40%; */
+    /* left: 40%; */
+    /* transform: translate(-50%, -50%);  */
+    text-align: center;
+    background-color: rgba(60, 60, 60, 0.7);
+    opacity: 0.7;
+   
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+  }
+  
+
 /*MEDIA QUERY FOR SECTION ONE*/
 
 @media(max-width:576px) {
@@ -141,6 +183,10 @@ header {
         display: flex;
         flex-direction: column;
         margin-bottom: 5em;
+    }
+    .navlink {
+        font-size: 8px;
+      
     }
 
 }
@@ -226,8 +272,7 @@ header {
     color: #363636;
     font-family: Roboto Slab;
     font-weight: bold;
-    width: 334px;
-    height: 151px;
+    
     line-height: 47.48px;
 }
 
@@ -282,6 +327,12 @@ header {
     .bottom-image {
         display: block;
         position: static;
+    }
+    .section-three h1 {
+        font-size: 15px;
+        line-height: 26.38px;
+        color: #363636;
+    
     }
 
 }

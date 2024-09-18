@@ -19,9 +19,16 @@
 </head>
 
 <body>
-    <div class="spinner-grow" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
+    
+    <div id="loading">
+        <svg  id="heart" width="72" height="59" viewBox="0 0 72 59" xmlns="http://www.w3.org/2000/svg">
+             <title>heart</title>
+             <g fill="none" fill-rule="evenodd">
+               <path d="M36.86 8.665l3.172-3.172c7.146-7.146 18.733-7.146 25.88 0 7.146 7.147 7.146 18.733 0 25.88L54.037 43.246c2.973-7.252 1.54-15.863-4.314-21.718L36.86 8.665z" fill="#6078EA"/>
+               <path d="M47.164 24.294L28.922 6.052C22.39-.48 11.8-.48 5.268 6.052s-6.532 17.122 0 23.654l27.7 27.7c1.308 1.31 3.43 1.31 4.738 0l9.458-9.458c6.532-6.532 6.532-17.122 0-23.654z" fill="#74BFFF"/>
+             </g>
+           </svg>  
+     </div>
 
       <div class="container-fluid d-flex row">
             <div class="col-6" id="form">
@@ -43,7 +50,7 @@
                         <span id="password-error" class="text-danger"></span> <!-- Password error message -->
                     </div>
                     <div class="footer">
-                        <a href="./forgotpassword.html">Forgot Password? </a>
+                        <a href="./forgotpassword">Forgot Password? </a>
                         <button onclick="loginValidation()" type="submit"><img
                                 src="./../resourcesFiles/Arrow Pointing Left (2).png" class="my-auto"></button>
                         <a href="./signup.html">Click here to Sign Up!</a>
@@ -52,37 +59,19 @@
 
             </div>
         </div>
-        <div class="col-6" id="form">
-            <img src="./../resourcesFiles/Frame 124 (1).png" class="img-fluid d-block mx-auto pt-2 my-auto">
-            <h4>Login</h4>
-
-            <p id="error-message" class="text-center text-danger"></p>
-
-            <form id="loginForm" action="/Healtify/login" method="post">
-                <div class="form-group">
-                    <label for="email" class="form-label"></label>
-                    <input type="email" id="email" name="email" class="form-control mx-auto" placeholder="Email">
-                    <span id="email-error" class="text-danger"></span> <!-- Email error message -->
-                </div>
-                <div class="form-group">
-                    <label for="password" class="form-label"></label>
-                    <input type="password" id="password" name="password" class="form-control mx-auto"
-                        placeholder="Password">
-                    <span id="password-error" class="text-danger"></span> <!-- Password error message -->
-                </div>
-                <button onclick="loginValidation()" class="btn btn-primary" type="submit">
-                    <img src="./../resourcesFiles/Arrow Pointing Left (2).png" class="my-auto">
-                </button>
-            </form>
-        </div>
-    </div>
     <script>
+        //  $(window).load(function() {
+        //   $('#loading').hide();
+        // });
+        window.onload = function(){ document.getElementById("loading").style.display = "none" }
         document.getElementById('loginForm').addEventListener('submit', async function (event) {
             event.preventDefault(); // Prevent the default form submission
                 const [email, password] = [document.getElementById('email').value, document.getElementById('password').value];
-
+                const loaderdiv = document.getElementById('loading')
+                loaderdiv.style.display='block'
                 try {
                     const response = await fetch('/Healtify/login', {
+                        
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
