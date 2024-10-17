@@ -55,6 +55,7 @@ header {
 
 .unscrolled {
     background-color: transparent !important;
+    
     transition: all 1s ease-out
 }
 
@@ -73,6 +74,7 @@ header {
     font-size: 16px;
     font-weight: 400;
     line-height: 15.83px;
+    display: block !important;
     text-decoration: none;
     color: #F9F9F9;
     gap: 10px;
@@ -81,6 +83,7 @@ header {
 
 .navlink:hover {
     color: #0202EA;
+    display: block !important;
 }
 
 .navlink:active {

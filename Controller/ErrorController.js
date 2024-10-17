@@ -41,7 +41,7 @@ const duplicateErrorHadler = (err)=>{
     }
 }
 const castErrorHandler = (err)=>{
-    const msg = `Invalid valid ${err.path} for field ${err.value}`
+    const msg = `Invalid  ${err.path} for field ${err.value}`
     return new CustomError(msg, 422)
 }
 module.exports= (error, req, res, next) => {

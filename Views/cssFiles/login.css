@@ -80,6 +80,7 @@ button {
     height: 100%;
     top: 0;
     left: 0;
+    margin: auto;
     text-align: center;
     opacity: 0.7;
     background-color: #fff;
