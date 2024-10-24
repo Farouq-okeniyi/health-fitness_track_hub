@@ -1,0 +1,10 @@
+ctransformers==0.2.5
+sentence-transformers==2.2.2
+pinecone-client==3.1.0
+langchain==0.0.225
+pinecone-notebooks==0.1.1
+pypdf
+flask
+python-dotenv
+!pip install -qU \
+-e .
