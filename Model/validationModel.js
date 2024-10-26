@@ -17,7 +17,7 @@ const userValidationSchema = joi.object({
     }),
     phoneNumber: joi.number().integer().min(1000000000).max(99999999999).required().messages({
         'number.empty':'please Input a valid phone number',
-          'any.required': 'Phone number is required'
+        'any.required': 'Phone number is required'
     }),
     gender: joi.string().optional(), // Gender is optional
     email: joi.string().email({minDomainSegments:2}).required().messages({

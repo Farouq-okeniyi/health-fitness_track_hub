@@ -324,7 +324,6 @@ const forgotPassword = async function(req, res, next){
         
 
 const resetPassword= async function(req,res,next){
-           
         }
 
 module.exports={

@@ -36,7 +36,7 @@ const validateErrorHandler = (err) => {
 const duplicateErrorHadler = (err)=>{
     if(err.keyValue.email){
         let msg = `${err.keyValue.email} is already in use, Please use another email`
-       
+        
         return new CustomError(msg, 422)
     }
 }
